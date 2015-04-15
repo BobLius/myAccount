@@ -1,0 +1,7 @@
+div.dropdown {position:absolute;background-color:#fff;border:1px solid #3980AF;border-top:none}
+div.dropdown .table {width:100%;text-align:left;line-height:25px}
+div.dropdown .table td {font-family: Arial;font-size:12px;padding:3px 2px;border-top:1px solid #d1d1d1}
+div.dropdown .trHeader {font-weight:bold;background-color: #F3F3F3;padding-top:2px}
+div.dropdown .overLine {background-color: #F1F5FC;color:#3980AF;cursor: pointer}
+div.dropdown .selectedLine {background-color: #F6F8FD;color: #ccc}
+div.dropdown .overSelectedLine {background-color: #EFF3FB;color:#3980AF;cursor: pointer}

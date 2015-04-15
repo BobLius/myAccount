@@ -1,0 +1,13 @@
+<!ELEMENT tree (tree*)>
+<!ATTLIST tree
+			text		 CDATA	#REQUIRED
+			src			 CDATA	#IMPLIED
+			onclick		 CDATA	#IMPLIED
+			value		 CDATA	#IMPLIED
+			showRadio 	 CDATA	#IMPLIED
+			showCheckbox CDATA	#IMPLIED
+			checked		 CDATA	#IMPLIED
+			oncheck		 CDATA	#IMPLIED
+			icon		 CDATA	#IMPLIED
+			openIcon	 CDATA	#IMPLIED
+			target		 CDATA	#IMPLIED>

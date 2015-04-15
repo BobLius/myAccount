@@ -1,0 +1,23 @@
+<html>
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>树形控件测试</title>
+		<!-- The xtree script file -->
+		<script src="../../script/xtree/xtree.js"></script>
+	</head>
+	<body>
+		<input type="button" value="查询" onclick="search();"/>
+		<div
+			style="position: absolute; width:50%; top: 0px; left: 150px; height: 100%; padding: 5px; overflow: auto;">
+			<script type="text/javascript">
+				var root = new WebFXLoadTree("客户初选数据项分类","./demo.xml");
+				document.write(root);
+				function search(){
+					root.search("other");
+				}
+				//alert(root.getLast().text);
+			</script>
+		</div>
+	</body>
+</html>
+

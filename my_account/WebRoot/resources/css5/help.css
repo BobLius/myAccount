@@ -1,0 +1,135 @@
+.favMenu {
+	BACKGROUND: buttonface; COLOR: windowtext; CURSOR: hand; FONT: menu
+}
+.favMenu DIV {
+	WIDTH: 100%
+}
+/**
+.favMenu A {
+	COLOR: windowtext; TEXT-DECORATION: none 
+}
+.favMenu A:hover {
+	COLOR: windowtext; TEXT-DECORATION: none 
+}
+**/
+
+.topFolder {
+	BORDER-BOTTOM: buttonface 1px solid; BORDER-LEFT: buttonface 1px solid; BORDER-RIGHT: buttonface 1px solid; 
+	BORDER-TOP: buttonface 1px solid; PADDING-BOTTOM: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; PADDING-TOP: 2px;WIDTH:100%
+}
+.topItem {
+	BORDER-BOTTOM: buttonface 1px solid; BORDER-LEFT: buttonface 1px solid; BORDER-RIGHT: buttonface 1px solid; 
+	BORDER-TOP: buttonface 1px solid; PADDING-BOTTOM: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; PADDING-TOP: 2px;WIDTH:100%
+}
+
+.subFolder {
+	PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px;WIDTH:100%
+}
+.subItem {
+	PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px;WIDTH:100%
+}
+.sub {
+	BACKGROUND: url(/images/tileback.gif) buttonface; BORDER-BOTTOM: buttonhighlight 1px solid; 
+	BORDER-LEFT: buttonshadow 1px solid; BORDER-RIGHT: buttonhighlight 1px solid; DISPLAY: none; PADDING-TOP: 1px;WIDTH:75%
+}
+.sub .subItem {
+	WIDTH:90%
+}
+.sub .sub {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-RIGHT: 0px; BORDER-TOP: 0px;WIDTH:90%
+}
+.icon {
+	HEIGHT: 12px; MARGIN-RIGHT: 5px; VERTICAL-ALIGN: top; WIDTH: 12px
+}
+.outer {
+	BACKGROUND: #FFFFFF; BORDER-BOTTOM: buttonhighlight 1px solid; BORDER-LEFT: buttonshadow 1px solid; 
+	BORDER-RIGHT: buttonhighlight 1px solid; BORDER-TOP: buttonshadow 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px;
+	 PADDING-RIGHT: 0px; PADDING-TOP: 0px;WIDTH:88%
+}
+.inner {
+	BORDER-BOTTOM: buttonshadow 1px solid; BORDER-LEFT: buttonhighlight 1px solid; BORDER-RIGHT: buttonshadow 1px solid; 
+	BORDER-TOP: buttonhighlight 1px solid; OVERFLOW: hidden; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; 
+	PADDING-TOP: 0px;WIDTH:100%
+}
+
+.scrollButton {
+	BACKGROUND: buttonface; BORDER-BOTTOM: buttonface 1px solid; BORDER-LEFT: buttonface 1px solid; 
+	BORDER-RIGHT: buttonface 1px solid; BORDER-TOP: buttonface 1px solid; COLOR: buttontext; CURSOR: default;
+	 DISPLAY: none; FONT-FAMILY: webdings; FONT-SIZE: 10px; HEIGHT: 16px; OVERFLOW: hidden; POSITION: absolute; 
+	 TEXT-ALIGN: center; WIDTH: 50px
+}
+
+.flat {
+	BORDER-BOTTOM: buttonface 1px solid; BORDER-LEFT: buttonface 1px solid; BORDER-RIGHT: buttonface 1px solid; 
+	BORDER-TOP: buttonface 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+
+#Page_title {
+border-bottom:2px solid #ddd;
+padding:0 2px 0 9px;
+display:none;
+color:#FFFFFF;
+}
+
+#Header {
+background:url(../images5/header_bg.gif) left top repeat-x;
+}
+#Header img {vertical-align:-5px;}
+
+#Page_content {
+width:860px;
+padding:0 20px;
+margin:0 auto;
+background:#fff;
+}
+.Area_title {
+border-top:2px solid #69c;
+padding:7px 2px 7px 0;
+font-size:13px;font-weight:bold;
+color:#004d99;
+margin-top:10px;
+}
+.Area_title img {vertical-align:top;}
+
+.table_content {
+padding:4px 4px 2px 4px;
+border-bottom:1px solid #ddd;
+}
+
+
+.pagetitle {
+font:16px "ºÚÌå";
+color:#b20;
+background: url(../images5/icon_pagetitle.gif) top left no-repeat;
+padding-left:20px;
+}
+
+#Page_left_help {
+margin:7px 0 0px 0;
+width:25%;
+float:left;
+
+}
+
+#Page_right_help {
+float:right;
+margin:7px 0 15px 0;
+}
+
+#Page_top_help {
+height:30%;
+margin:0px 0 0px 0;
+}
+
+#Page_bottom_help {
+margin:0px 0 0px 0;
+}
+
+.clear {clear:both;}
+
+.step_on {background:#f4f4f4;padding:0 10px;}
+.step_off {background:#fff;padding:0 10px;}
+.step_on .content_title {color:#444;}
+
+.text_content {padding:6px 6px 2px 8px;border-bottom:1px solid #eee;}
+.text_content img {vertical-align:middle;}

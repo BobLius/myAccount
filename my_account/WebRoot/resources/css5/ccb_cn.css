@@ -1,0 +1,137 @@
+.float_left {float:left;}
+.float_right {float:right;}
+.clear {clear:both;}
+.top_margin {margin:46px 8px 0 0;}
+
+* { 
+margin:0; 
+padding:0; 
+} 
+body {
+background:transparent;
+overflow:auto;
+
+/*overflow-x:auto;overflow:visible;
+overflow-x:hidden;*/
+}
+body,div,td,span,p {
+font:12px "ËÎÌו",Tahoma;
+}
+p {text-indent:2em;line-height:24px;font-size:13px;margin-bottom:12px;}
+img {border:0;}
+a {
+text-decoration:none;
+cursor:hand;
+}
+a:hover {
+text-decoration:none;
+}
+input {
+font:12px "ËÎÌו",Tahoma;
+padding:1px 2px 0 2px;
+}
+input.button {
+padding:4px 10px 1px 10px;
+border:0;
+margin-right:10px;
+cursor:hand;
+}
+input.button_dis {
+padding:4px 10px 1px 10px;
+border:0;
+margin-right:10px;
+cursor:hand;
+}
+select {font:12px "ËÎÌו",Tahoma;}
+ul {
+margin:0 0 6px 0;
+list-style:outside square;
+padding-left:17px;
+font-weight:bold;
+}
+li {
+margin:3px 0 0 0;
+padding:1px 0;
+font-weight:normal;
+}
+.menu1_on {
+margin-bottom:-1px;
+}
+
+.menu1_off,
+.menu1_on {
+text-align:center;
+display:block;
+float:left;
+cursor:default;
+font-size:13px;
+font-weight:bold;
+}
+
+.menu1_left{
+width:10px;
+text-align:center;
+display:block;
+float:left;
+cursor:default;
+font-size:13px;
+font-weight:bold;
+height:21px;
+}
+
+.menu1_right{
+width:9px;
+text-align:center;
+display:block;
+float:left;
+cursor:default;
+font-size:13px;
+font-weight:bold;
+height:21px;
+}
+
+
+.menu1_on .menu1_middle{
+padding:5px 0 2px 0;
+height:15px;
+text-align:center;
+display:block;
+float:left;
+cursor:default;
+font-size:13px;
+font-weight:bold;
+}
+
+.menu1_off .menu1_middle{
+padding:6px 0 0px 0;
+height:15px;
+text-align:center;
+display:block;
+float:left;
+cursor:default;
+font-size:13px;
+font-weight:bold;
+}
+
+.menu2_on {
+font-size:13px;
+font-weight:normal;
+}
+.menu2_off {
+font-size:13px;
+font-weight:normal;
+}
+.menu3_on,
+.menu3_off {
+float:left;
+margin:10px 0 -10px 0;
+width:90px;
+display:block;
+padding:7px 0 2px 0;
+text-align:center;
+}
+.icon {
+HEIGHT: 12px; MARGIN-RIGHT: 5px; VERTICAL-ALIGN: top; WIDTH: 12px
+}
+
+.text_bold {font-weight:bold;}

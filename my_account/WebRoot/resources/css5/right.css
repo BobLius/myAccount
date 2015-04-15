@@ -1,0 +1,146 @@
+/*==============================================================
+文件说明：交易右侧页面非颜色、图片样式定义的css样式定义文件
+===============================================================*/
+
+/****************
+author:huangyupeng
+date:20060609
+function:交易右侧页面内容样式  
+****************/
+.right_content {
+padding:0px 0 10px 0;
+line-height:18px;
+}
+
+/****************
+author:huangyupeng
+date:20060609
+function:交易右侧页面标题样式
+****************/
+.right_title {
+text-align:right;
+font-weight:bold;
+line-height:12px;
+padding:2px 4px 0 0;
+margin:2px 0px 8px 0px;
+border-bottom:2px solid;
+}
+
+/****************
+author:huangyupeng
+date:20060609
+function:交易右侧页面链接标题样式
+****************/
+.relative {
+margin:1px 0 0 0;
+background:transparent;
+padding:3px 0 0 0;
+border-top:2px solid;
+}
+
+/****************
+author:huangyupeng
+date:20060609
+function:交易右侧页面链接标题 li 样式
+****************/
+.relative li {
+margin:3px 0 0 0;
+padding:0px 0;
+font-weight:normal;
+/*border-bottom:1px solid;*/
+}
+
+/************* 快速帮助 相关样式 *************/
+
+/****************
+author:huangyupeng
+date:20060609
+function:交易右侧页面快速帮助样式
+****************/
+.quick_help {
+}
+.quick_help li {
+margin:3px 0 0 0;
+line-height:16px;
+}
+/****************
+author:huangyupeng
+date:20060609
+function:交易右侧页面快速帮助链接样式
+****************/
+.quick_help a {
+text-decoration:none;
+}
+
+/****************
+author:huangyupeng
+date:20060609
+function:交易右侧页面快速帮助链接（鼠标置于该链接上时）样式
+****************/
+.quick_help a:hover {
+text-decoration:underline;
+}
+
+
+
+/************* message 相关样式 ************* /
+
+/****************
+author:huangyupeng
+date:20060609
+function:交易右侧页面有新信息提示框样式
+****************/
+.new_message {
+display:block;
+padding:10px 6px 6px 34px;
+margin:0px 0px 6px 0px;
+border:1px solid;
+}
+
+/****************
+author:huangyupeng
+date:20060609
+function:交易右侧页面新消息列表样式
+****************/
+#Msg_list{
+width:198px;
+position:absolute;left:0;top:31px;
+padding:6px 0;
+}
+
+/****************
+author:huangyupeng
+date:20060609
+function:交易右侧页面新消息列表链接样式
+****************/
+#Msg_list a {
+text-decoration:underline;
+display:block;
+padding:3px 16px 3px 20px;
+}
+
+/****************
+author:huangyupeng
+date:20060609
+function:交易右侧页面新消息列表链接（鼠标置于该链接上）样式
+****************/
+#Msg_list a:hover {
+text-decoration:underline;
+}
+
+/****************
+author:huangyupeng
+date:20060609
+function:待明确
+****************/
+.msg_top_message{
+margin-top:63px;
+}
+
+
+/****************
+author:huangyupeng
+date:20060609
+function:字体右对齐
+****************/
+.text_right {text-align:right;}

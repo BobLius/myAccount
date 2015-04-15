@@ -1,0 +1,12 @@
+/*==============================================================
+文件说明：换肤的css）
+===============================================================*/
+/* skins */
+
+.line_blue,
+.line_red,
+.line_orange {margin:0 60px 0 10px;}
+
+.line_blue {border:1px solid #69c;}
+.line_red {border:1px solid #b20;}
+.line_orange {border:1px solid #ca4;}

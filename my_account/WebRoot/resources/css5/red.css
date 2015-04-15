@@ -1,0 +1,886 @@
+/*==============================================================
+文件说明：页面蓝色风格的css样式定义文件，css样式名称必须要与其他颜色管理css文件（如red.css）一致
+===============================================================*/
+
+.text_notice {background:#FEF0EE url(../images5/red/icon_gantan.gif) 5px 50% no-repeat;border:1px solid #E6B2B4;}.reg_flow {color:#777;background:#f0f0f0;}.flow_focus {color:#b20;}
+
+
+/****************
+author:chenxiuling
+date:20060705
+function:主框架页面BODY样式
+****************/
+body.main_body {
+background:#eee;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:日期样式
+****************/
+.text_date {color:#777;}
+
+/****************
+author:chenxiuling
+date:20060705
+function:时间样式
+****************/
+.text_time {color:#777;}
+
+/****************
+author:chenxiuling
+date:20060705
+function:一级菜单已选中样式
+****************/
+.menu1_on {
+background:#fff url(../images5/red/menu1_bg_on.gif) left top no-repeat;
+color:#FFCC00;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:一级菜单未选中样式
+****************/
+.menu1_off {
+background:#fff url(../images5/red/menu1_bg_off.gif) left top no-repeat;
+color:#ffffff;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:二级菜单已选中样式
+****************/
+.menu2_on {
+color:#b20;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:二级菜单未选中样式
+****************/
+.menu2_off {
+color:#049;
+}
+
+/****************
+author:chenxiuling
+date:20060710
+function:二级菜单不选用样式
+****************/
+.menu2_unused {
+color:#777;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:三级菜单已选中样式
+****************/
+.menu3_on {
+background:url(../images5/red/menu3_bg_on.gif) left top no-repeat;
+color:#b20;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:三级菜单已选中样式
+****************/
+.menu3_off {
+background:url(../images5/red/menu3_bg_off.gif) left top no-repeat;
+color:#369;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:主页面样式
+****************/
+#Page_content {
+background:#fff;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:页面顶端样式
+****************/
+#Header {
+background:url(../images5/red/header_bg.gif) left top repeat-x;
+}
+
+
+/****************
+author:chenxiuling
+date:20060705
+function:页面一级菜单样式
+****************/
+#Menu1 {
+border-bottom:#C41521;
+}
+
+
+/****************
+author:chenxiuling
+date:20060705
+function:页脚样式
+****************/
+#Footer {
+color:#aaa;
+border-top:#eee;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:交易页面body，div,td,span,p样式
+****************/
+body,div,td,span,p {
+color:#505050;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:交易标题横线样式
+****************/	
+.tx_title_line {
+border-top:#E15057;
+color:#C41521;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:交易页面顶端交易标题样式
+****************/
+.area_title {
+color:#C41521;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:交易页面交易步骤标题样式
+****************/
+.content_title {
+color:#999;
+}
+
+
+
+/****************
+author:chenxiuling
+date:20060705
+function:页面链接样式
+****************/
+a {
+color:#039;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:页面链接（鼠标置于该链接上）样式
+****************/	
+a:hover {
+color:#b20;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:页面 input按钮样式
+****************/
+input.button {
+color:#fff;
+background:#a74d4a url(../images5/red/button_bg.gif) left top repeat-x;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:灰掉的button样式
+****************/
+input.button_dis {
+color:#fff;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:页面 select 样式
+****************/	
+select {color:#444;}
+
+/****************
+author:chenxiuling
+date:20060705
+function:页面 ul 样式
+****************/	
+ul {
+color:#999;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:页面 li 样式
+****************/		
+li {
+color:#777;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:页面段落样式
+****************/		
+p {color:#333;}
+
+
+/**************页面字体样式***************/	
+
+/****************
+author:chenxiuling
+date:20060705
+function: 交易页面字体
+****************/
+.text_content {border-bottom:#ddd;}
+
+
+/****************
+author:chenxiuling
+date:20060705
+function:红色字体式样
+****************/
+.text_red {color:#b20;}
+
+/****************
+author:chenxiuling
+date:20060705
+function:红色字体（鼠标置于其上）式样
+****************/
+a.text_red:hover {color:#777;}
+
+/****************
+author:chenxiuling
+date:20060705
+function:绿色字体样式
+****************/
+.text_green {color:#090;}
+
+
+/****************
+author:chenxiuling
+date:20060705
+function:大字体样式
+****************/
+.text_big {color:#444;}
+
+/****************
+author:chenxiuling
+date:20060705
+function:显示成功信息 tx.js调用
+****************/
+.text_success {
+background:#FEF0EE url(../images5/red/icon_success.gif) 5px 50% no-repeat;
+border:#E6B2B4;
+}
+
+
+
+/****************
+author:huangyupeng
+date:20060609
+function:交易页面格式样式 tx.js调用
+****************/
+.reg_flow {
+color:#777;
+background:#f0f0f0;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:ccb.js调用
+****************/
+.flow_focus {color:#b20;}
+.flow_undo {color:#777;}
+.flow_done {color:#777;}
+
+/************************* TIP Settings / 交易步骤提示 *************************/
+/****************
+author:chenxiuling
+date:20060705
+function:非当前选中对象样式 tx.js调用
+****************/
+.tip_off {
+background:#fff url(../images5/red/arr_tip_off.gif) 4px 6px no-repeat;
+color:#777;;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:当前选中对象样式 tx.js调用
+****************/
+.tip_on {
+border:#090;
+background:#e9fde9 url(../images5/red/arr_tip_on.gif) 4px 6px no-repeat;
+color:#444;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:步骤提示，当前步骤样式
+****************/	
+.step_on {background:#f4f4f4;}
+
+/****************
+author:chenxiuling
+date:20060705
+function:步骤提示，非当前步骤样式 暂无调用
+****************/	
+.step_on .tip_off {
+border:#d0e0ef;
+background:#fff url(../images5/red/arr_tip_off.gif) 4px 6px no-repeat;
+color:#555;
+}
+
+
+/****************
+author:chenxiuling
+date:20060705
+function:步骤提示，非当前步骤样式
+****************/
+.step_off {background:#fff;}
+
+/****************
+author:chenxiuling
+date:20060705
+function:步骤提示，非当前步骤标题样式
+****************/
+.step_on .content_title {color:#444;}
+
+/****************
+author:chenxiuling
+date:20060705
+function:步骤提示，非当前步骤字体样式
+****************/
+.step_on .text_content {color:#000000;}
+
+/************************* TABLE Setting / 表格-指数据列表 *************************/
+/****************
+author:huangyupeng
+date:20061015
+function:表格整体样式
+****************/
+.table_all{
+background:#ffffff;
+}
+/****************
+author:chenxiuling
+date:20060705
+function:表格标题样式
+****************/
+.table_head {
+border-top:#ccc;
+background:#e4e4e4;
+color:#000000;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:表格标题链接样式
+****************/
+.table_head a {
+color:#369;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:表格二级标题样式
+****************/
+.table_subhead {
+border-top:#ddd;
+border-bottom:#ddd;
+color:#b20;
+background:#F7EDEE;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:表格内容样式
+****************/
+.table_content {
+border-bottom: #ddd;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:表格选定样式
+****************/
+.table_select_bg {
+background:#fff url(../images5/red/table_select_bg.gif) left top repeat-x;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:表格选中样式
+****************/	
+.table_on {
+background:#F6CCCE;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:表格单元格选中样式
+****************/		
+.table_on td {
+color:#000000;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:表格左边标题样式
+****************/
+.left_head {
+color:#660D00;
+border-bottom: #ddd;
+}
+
+/***************交易右侧页面样式*****************/
+/****************
+author:chenxiuling
+date:20060705
+function:交易右侧页面链接标题样式
+****************/
+.relative {
+list-style:inside url(../images5/red/icon_list.gif);
+border-top:#E15057;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:交易右侧页面链接标题 li 样式
+****************/	
+.relative li {
+color:#777;
+border-bottom: #ddd;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:交易右侧页面标题样式
+****************/
+.right_title {
+border-bottom: #E15057;
+color:#36b;
+}
+
+/************* 快速帮助 相关样式 *************/
+/****************
+author:chenxiuling
+date:20060705
+function:主框架页面快速链接
+****************/
+.quick_help a {
+color:#039;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:主框架页面快速链接
+****************/
+.quick_help a:hover {
+color:#777;
+}
+
+/************* message 相关样式 *************/
+/****************
+author:chenxiuling
+date:20060705
+function:主框架页面邮件信息
+****************/
+.new_message {
+color:#69c;
+border:#b20;
+background:#ffeeea url(../images5/red/icon_message.gif) left 50% no-repeat;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:主框架页面邮件信息
+****************/
+.new_message:hover {
+border:1px solid #090;
+color:#777;
+background:#e0fae0 url(../images5/red/icon_message_hover.gif) left 50% no-repeat;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:主框架页面邮件信息下拉
+****************/
+#Msg_list a {
+color:#69c;
+background:transparent url(../images5/red/icon_list.gif) 4px 0 no-repeat;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:主框架页面邮件信息下拉
+****************/
+#Msg_list a:hover {
+color:#777;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:主框架页面邮件信息下拉
+****************/
+#Msg_list{
+border:1px solid #777;
+background:#fff;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:主框架页面邮件信息
+****************/
+.no_message {
+color:#777;
+border:1px solid #aaa;
+background:#f0f0f0 url(../images5/red/icon_message_no.gif) left 50% no-repeat;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:表格行-2背景颜色样式
+****************/	
+.rowbgcolor2 {
+background:#F6F6F6;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:表格行背景颜色样式
+****************/	
+.rowbgcolor {
+background:#D6E9EF;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:表格网格字体颜色样式
+****************/	
+.cellfgcolorF {
+color:#FFFFFF;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:表格网格字体颜色样式
+****************/	
+.cellfgcolor0 {
+color:#000000;
+}
+
+/****************
+author:chenxiuling
+date:20060705
+function:表格网格内链接颜色样式
+****************/	
+.cellfgcolorF0 {
+color:#0000FF;
+}
+
+/*==============================================================
+author:chenxiuling
+date:20060705
+function:换肤颜色样式
+===============================================================*/
+/* skins */
+
+.line_blue,
+.line_red,
+.line_orange {margin:0 60px 0 10px;}
+
+.line_blue {border:1px solid #69c;}
+.line_red {border:1px solid #C41521;}
+.line_orange {border:1px solid #FFCC00;}
+
+/****************
+author:chenxiuling
+date:20060711
+function:常见问题解答样式
+****************/
+.button_helpcenter {
+background:#fff url(../images5/red/button_helpcenter.gif) left top no-repeat;
+cursor:hand;
+}
+
+/****************
+author:chenxiuling
+date:20060711
+function:退出系统样式
+****************/
+.button_exit {
+background:#fff url(../images5/red/button_exit.gif) left top no-repeat;
+cursor:hand;
+}
+
+/****************
+author:chenxiuling
+date:20061222
+function:在线客服样式
+****************/
+.button_olhelp {
+background:#fff url(../images5/red/button_olhelp.gif) left top no-repeat;
+cursor:hand;
+}
+
+/****************
+author:zhaona
+date:20060711
+function:星号样式
+****************/
+.req {font-weight:bold;color:#b20;}
+
+/****************
+author:chenxiuling
+date:20060712
+function:关闭按钮样式
+****************/
+.icon_close {
+background:#fff url(../images5/red/icon_close.gif) left top no-repeat;
+cursor:hand;
+}
+
+/****************
+author:chenxiuling
+date:20060712
+function:打开按钮样式
+****************/
+.icon_open {
+background:#fff url(../images5/red/icon_open.gif) left top no-repeat;
+cursor:hand;
+}
+
+/*==============================================================
+author:
+date:20060713
+function:换肤颜色样式
+===============================================================*/
+/* skins */
+.list a {
+color:#b20;
+text-decoration:none;
+display:block;
+padding:3px 2px 3px 5px;
+background:transparent 4px 0 no-repeat;
+}
+.list a:hover {
+text-decoration:none;
+color:#777;
+}
+
+.list {
+margin-top:10px;
+display:block;
+color:#b20;
+padding:3px 2px 3px 5px;
+border:1px solid #b20;
+background:#ffeeea
+}
+/*****************************************************
+author:Lifeng
+date:20060713
+function:树菜单背景在点击之前之后所表现的反显效果
+******************************************************/
+.topFolder {
+	BORDER-BOTTOM: buttonface 1px solid; BORDER-LEFT: buttonface 1px solid; BORDER-RIGHT: buttonface 1px solid; BORDER-TOP: buttonface 1px solid; PADDING-BOTTOM: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; PADDING-TOP: 2px
+}
+.topItem {
+	BORDER-BOTTOM: buttonface 1px solid; BORDER-LEFT: buttonface 1px solid; BORDER-RIGHT: buttonface 1px solid; BORDER-TOP: buttonface 1px solid; PADDING-BOTTOM: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; PADDING-TOP: 2px
+}
+
+.subFolder {
+	PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px
+}
+.subItem {
+	PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px
+}
+
+.sub {
+	BACKGROUND: url(/images/tileback.gif) buttonface; BORDER-BOTTOM: buttonhighlight 1px solid; BORDER-LEFT: buttonshadow 1px solid; BORDER-RIGHT: buttonhighlight 1px solid; DISPLAY: none; PADDING-TOP: 1px
+}
+.sub .sub {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-RIGHT: 0px; BORDER-TOP: 0px
+}
+
+/**************************************
+author:Lifeng
+date:20060713
+function:树菜单背景色及字体
+***************************************/
+.favMenu {
+	BACKGROUND: buttonface; COLOR: windowtext; CURSOR: hand; FONT: menu
+}
+.favMenu DIV {
+	WIDTH: 100%
+}
+.favMenu A {
+	COLOR: windowtext; TEXT-DECORATION: none 
+}
+.favMenu A:hover {
+	COLOR: windowtext; TEXT-DECORATION: none 
+}
+.outer {
+	BACKGROUND: #FFFFFF; BORDER-BOTTOM: buttonhighlight 1px solid; BORDER-LEFT: buttonshadow 1px solid; BORDER-RIGHT: buttonhighlight 1px solid; BORDER-TOP: buttonshadow 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.inner {
+	BORDER-BOTTOM: buttonshadow 1px solid; BORDER-LEFT: buttonhighlight 1px solid; BORDER-RIGHT: buttonshadow 1px solid; BORDER-TOP: buttonhighlight 1px solid; OVERFLOW: hidden; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.flat {
+	BORDER-BOTTOM: buttonface 1px solid; BORDER-LEFT: buttonface 1px solid; BORDER-RIGHT: buttonface 1px solid; BORDER-TOP: buttonface 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+
+/****************
+author:chenxiuling
+date:20060718
+function:交易页面顶端交易标题样式
+****************/
+.area_title_haveline {
+border-top:2px solid #E15057;
+color:#C41521;
+}
+
+/****************
+author:chenxiuling
+date:20060718
+function:三级菜单标题标题样式
+****************/
+A.menu3:link {
+	TEXT-DECORATION: underline;
+	color: #C41521
+}
+A.menu3:visited {
+	TEXT-DECORATION: underline;
+	color: #C41521
+}
+A.menu3:hover {  
+	TEXT-DECORATION: underline;
+	color: #b20
+}
+A.menu3:active {  
+	TEXT-DECORATION: underline;
+	color: #b20
+}
+
+
+/****************
+author:huangyupeng
+date:20060609
+function:三级菜单标题样式
+****************/
+.menu3_title {
+color:#C41521;
+}
+
+/****************
+author:huangyupeng
+date:20060609
+function:四级菜单链接
+****************/
+A.menu4:link {
+	TEXT-DECORATION: underline;
+	color: #b20
+}
+A.menu4:visited {
+	TEXT-DECORATION: underline;
+	color: #b20
+}
+A.menu4:hover {  
+	TEXT-DECORATION: underline;
+	color: #777
+}
+A.menu4:active {  
+	TEXT-DECORATION: underline;
+	color: #b20
+}/****************
+author:chenxiuling
+date:20060808
+function:退出系统标题样式
+****************/
+.exit_css {
+color:#777;
+border:#b20;
+background:#ffeeea;
+}
+
+/****************
+author:huangyp
+date:20060830
+function:重要金额显示样式
+****************/
+.important_money{ 
+	color:#bb2200;
+}
+
+/****************
+author:huangyupeng
+date:20060609
+function:交易右侧页面链接标题样式
+****************/
+.text_info {
+color:#E15057;
+}
+
+/****************
+author:fanzhipeng
+date:20061015
+function:功能介绍红色式样
+****************/
+.introduce_dot {color:#b20;line-height:13pt}
+.introduce_menu {color:#b20;text-decoration:underline;line-height:13pt}
+.introduce_info {color:#505050;line-height:13pt}
+
+/****************
+author:fanzhipeng
+date:20061015
+function:功能介绍图片
+****************/ 
+.img_wdzh {background:#f0f0f0 url(../images5/wdzh.gif) no-repeat left top;}
+.img_zzhk {background:#f0f0f0 url(../images5/zzhk.gif) no-repeat left top;}
+.img_jfzf {background:#f0f0f0 url(../images5/jfzf.gif) no-repeat left top;}
+.img_xyk  {background:#f0f0f0 url(../images5/xyk.gif) no-repeat left top;}
+.img_grdk {background:#f0f0f0 url(../images5/grdk.gif) no-repeat left top;}
+.img_tzlc {background:#f0f0f0 url(../images5/tzlc.gif) no-repeat left top;}
+.img_khfw {background:#f0f0f0 url(../images5/khfw.gif) no-repeat left top;}
+.img_aqzx {background:#f0f0f0 url(../images5/aqzx.gif) no-repeat left top;}

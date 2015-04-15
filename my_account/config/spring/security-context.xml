@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"  	
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+  	http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd
+  	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	<!--  <debug /> -->
+	<aop:aspectj-autoproxy /><!-- 支持 @AspectJ 标记--> 
+	
+	<global-method-security pre-post-annotations="enabled" />
+	<!-- 该路径下的资源不用过滤 -->
+	<http pattern="/resources/**" security="none" />
+	<http pattern="/common/**" security="none" />
+	<http pattern="/login_sso.jsp" security="none" />
+	<http pattern="/logout.jsp" security="none" />
+	<http pattern="/error.jsp" security="none"/>
+	<!-- 用于资料同步的url也不用过滤 -->
+	<http pattern="/sync" security="none"/>
+	<http pattern="/channel/getChannels" security="none"/>
+	
+	<!-- 注销客户端 -->
+	<beans:bean id="singleLogoutFilter" class="org.jasig.cas.client.session.SingleSignOutFilter" />
+	
+	<!-- 实现了UserDetailsService的Bean -->
+	<beans:bean id="customUserDetailService" class="com.miteno.myAccount.security.springsecurity.CustomUserDetailsServiceImpl"/>
+	<!-- customUserDetailService cas 包装-->
+	<beans:bean id="casAuthenticationUserDetailsService"
+		class="org.springframework.security.core.userdetails.UserDetailsByNameServiceWrapper">
+		<beans:property name="userDetailsService">
+			<beans:ref bean="customUserDetailService" />
+		</beans:property>
+	</beans:bean>
+
+    <beans:bean id="authenticationLoggerListener" class="org.springframework.security.authentication.event.LoggerListener"/>  
+    <beans:bean id="authorizationLoggerListener" class="org.springframework.security.access.event.LoggerListener"/>  
+    
+  	<!-- Jcaptcha相关的配置 -->
+	<beans:bean id="captchaService"
+		class="com.octo.captcha.service.image.DefaultManageableImageCaptchaService">
+		<beans:property name="captchaEngine" ref="gmailEngine"/>			
+		<!-- 默认生成的图片180秒过期 , 可另行设置  -->
+		<beans:property name="minGuarantedStorageDelayInSeconds" value="180" />
+	</beans:bean>
+
+</beans:beans>
