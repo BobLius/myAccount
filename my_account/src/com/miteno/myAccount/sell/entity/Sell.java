@@ -1,7 +1,5 @@
 package com.miteno.myAccount.sell.entity;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -19,16 +17,16 @@ public class Sell implements java.io.Serializable{
 	@GeneratedValue(generator = "hibernate-uuid")
 	@GenericGenerator(name = "hibernate-uuid", strategy = "uuid")
 	private String id;
-	private String socket_id;//股票代码
-	private String socket_name;//股票名称
-	private Date selldate;//卖出时间
-	private String sell_mount;//卖出股数
-	private String sell_every_money;//每股价格
-	private String sell_tolle_money;//总卖出价格
-	private String brokerage;//佣金
-	private String transfer_fee;//过户费
-	private String stamp;//印花税
-	private String the_end;//成交额
+	private String stock_id;//股票代码
+	private String sell_date;//卖出时间
+	private double sell_mount;//卖出股数
+	private double sell_every_money;//每股价格
+	private double sell_tolle_money;//总卖出价格
+	private double brokerage;//佣金
+	private double brokerage_rate;
+	private double transfer_fee;//过户费
+	private double stamp;//印花税
+	private double the_end;//成交额
 	
 	public String getId() {
 		return id;
@@ -36,65 +34,64 @@ public class Sell implements java.io.Serializable{
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getSocket_id() {
-		return socket_id;
+	public String getStock_id() {
+		return stock_id;
 	}
-	public void setSocket_id(String socket_id) {
-		this.socket_id = socket_id;
+	public void setStock_id(String stock_id) {
+		this.stock_id = stock_id;
 	}
-	public String getSocket_name() {
-		return socket_name;
+	public String getSell_date() {
+		return sell_date;
 	}
-	public void setSocket_name(String socket_name) {
-		this.socket_name = socket_name;
+	public void setSell_date(String sell_date) {
+		this.sell_date = sell_date;
 	}
-	public Date getSelldate() {
-		return selldate;
-	}
-	public void setSelldate(Date selldate) {
-		this.selldate = selldate;
-	}
-	public String getSell_mount() {
+	public double getSell_mount() {
 		return sell_mount;
 	}
-	public void setSell_mount(String sell_mount) {
+	public void setSell_mount(double sell_mount) {
 		this.sell_mount = sell_mount;
 	}
-	public String getSell_every_money() {
+	public double getSell_every_money() {
 		return sell_every_money;
 	}
-	public void setSell_every_money(String sell_every_money) {
+	public void setSell_every_money(double sell_every_money) {
 		this.sell_every_money = sell_every_money;
 	}
-	public String getSell_tolle_money() {
+	public double getSell_tolle_money() {
 		return sell_tolle_money;
 	}
-	public void setSell_tolle_money(String sell_tolle_money) {
+	public void setSell_tolle_money(double sell_tolle_money) {
 		this.sell_tolle_money = sell_tolle_money;
 	}
-	public String getBrokerage() {
+	public double getBrokerage() {
 		return brokerage;
 	}
-	public void setBrokerage(String brokerage) {
+	public void setBrokerage(double brokerage) {
 		this.brokerage = brokerage;
 	}
-	public String getTransfer_fee() {
+	public double getBrokerage_rate() {
+		return brokerage_rate;
+	}
+	public void setBrokerage_rate(double brokerage_rate) {
+		this.brokerage_rate = brokerage_rate;
+	}
+	public double getTransfer_fee() {
 		return transfer_fee;
 	}
-	public void setTransfer_fee(String transfer_fee) {
+	public void setTransfer_fee(double transfer_fee) {
 		this.transfer_fee = transfer_fee;
 	}
-	public String getStamp() {
+	public double getStamp() {
 		return stamp;
 	}
-	public void setStamp(String stamp) {
+	public void setStamp(double stamp) {
 		this.stamp = stamp;
 	}
-	public String getThe_end() {
+	public double getThe_end() {
 		return the_end;
 	}
-	public void setThe_end(String the_end) {
+	public void setThe_end(double the_end) {
 		this.the_end = the_end;
 	}
-
 }

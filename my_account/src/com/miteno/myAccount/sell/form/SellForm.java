@@ -1,15 +1,13 @@
 package com.miteno.myAccount.sell.form;
 
-import java.util.Date;
-
 import com.miteno.common.dao.Page;
 import com.miteno.myAccount.sell.entity.Sell;
 
 public class SellForm extends Page<Sell>{
 
-	private String socket_id;//股票代码
-	private String socket_name;//股票名称
-	private Date selldate;//卖出时间
+	private String stock_id;//股票代码
+	private String stock_name;//股票名称
+	private String sell_date;//卖出时间
 	private String sell_mount;//卖出股数
 	private String sell_every_money;//每股价格
 	private String sell_tolle_money;//总卖出价格
@@ -18,23 +16,23 @@ public class SellForm extends Page<Sell>{
 	private String stamp;//印花税
 	private String the_end;//成交额
 	
-	public String getSocket_id() {
-		return socket_id;
+	public String getStock_id() {
+		return stock_id;
 	}
-	public void setSocket_id(String socket_id) {
-		this.socket_id = socket_id;
+	public void setStock_id(String stock_id) {
+		this.stock_id = stock_id;
 	}
-	public String getSocket_name() {
-		return socket_name;
+	public String getStock_name() {
+		return stock_name;
 	}
-	public void setSocket_name(String socket_name) {
-		this.socket_name = socket_name;
+	public void setStock_name(String stock_name) {
+		this.stock_name = stock_name;
 	}
-	public Date getSelldate() {
-		return selldate;
+	public String getSell_date() {
+		return sell_date;
 	}
-	public void setSelldate(Date selldate) {
-		this.selldate = selldate;
+	public void setSell_date(String sell_date) {
+		this.sell_date = sell_date;
 	}
 	public String getSell_mount() {
 		return sell_mount;

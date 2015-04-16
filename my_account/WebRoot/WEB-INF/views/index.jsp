@@ -94,7 +94,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		 function deleteCookie(name){
            var date=new Date();
            date.setTime(date.getTime()-10000);
-           document.cookie=name+"=v; expire="+date.toGMTString()+"; path=/coupon/ ;domain="+document.domain;
+           document.cookie=name+"=v; expire="+date.toGMTString()+"; path=/myAccount/ ;domain="+document.domain;
          }
          
          // js 遍历所有Cookie

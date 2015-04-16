@@ -445,15 +445,6 @@
 				<tr>
 					<td align="center">用户类型</td>
 					<td>
-							机构用户<sf:radiobutton path="user_type" value="0" checked="true" onclick="instform()"/>
-							<sf:select path="inst" id="inst">
-								<c:forEach items="${couponInst}" var="couponInst" varStatus="i">
-									<sf:option value="${couponInst.inst_id}" label="${couponInst.cname}"/>
-								</c:forEach>
-							</sf:select>
-						<br> 
-						<br> 
-						平台用户<sf:radiobutton path="user_type" value="1" onclick="platform()"/>
 					</td>
 				</tr>
 			</c:if>

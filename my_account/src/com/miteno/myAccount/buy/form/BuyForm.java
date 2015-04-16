@@ -1,40 +1,39 @@
 package com.miteno.myAccount.buy.form;
 
-import java.util.Date;
-
 import com.miteno.common.dao.Page;
 import com.miteno.myAccount.buy.entity.Buy;
 
 public class BuyForm extends Page<Buy> {
 
-	private String socket_id;// 股票代码
-	private String socket_name;// 股票名称
-	private Date buy_date;// 买入时间
+	private String stock_id;// 股票代码
+	private String stock_name;// 股票名称
+	private String buy_date;// 买入时间
 	private String buy_mount;// 买入股数
 	private String buy_every_money;// 每股价格
 	private String buy_tolle_money;// 总买入价格
 	private String brokerage;// 佣金
+	private String brokerage_rate;//佣金率
 	private String transfer_fee;// 过户费
 	private String costs;// 每股成本
 	private String the_end;// 成交额
 	private String sell_lowest;// 最低卖出价格
 	
-	public String getSocket_id() {
-		return socket_id;
+	public String getStock_id() {
+		return stock_id;
 	}
-	public void setSocket_id(String socket_id) {
-		this.socket_id = socket_id;
+	public void setStock_id(String stock_id) {
+		this.stock_id = stock_id;
 	}
-	public String getSocket_name() {
-		return socket_name;
+	public String getStock_name() {
+		return stock_name;
 	}
-	public void setSocket_name(String socket_name) {
-		this.socket_name = socket_name;
+	public void setStock_name(String stock_name) {
+		this.stock_name = stock_name;
 	}
-	public Date getBuy_date() {
+	public String getBuy_date() {
 		return buy_date;
 	}
-	public void setBuy_date(Date buy_date) {
+	public void setBuy_date(String buy_date) {
 		this.buy_date = buy_date;
 	}
 	public String getBuy_mount() {
@@ -60,6 +59,12 @@ public class BuyForm extends Page<Buy> {
 	}
 	public void setBrokerage(String brokerage) {
 		this.brokerage = brokerage;
+	}
+	public String getBrokerage_rate() {
+		return brokerage_rate;
+	}
+	public void setBrokerage_rate(String brokerage_rate) {
+		this.brokerage_rate = brokerage_rate;
 	}
 	public String getTransfer_fee() {
 		return transfer_fee;
