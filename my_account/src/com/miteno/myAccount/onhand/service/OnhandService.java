@@ -14,6 +14,7 @@ import com.miteno.myAccount.brokerage.service.BrokerageService;
 import com.miteno.myAccount.buy.entity.Buy;
 import com.miteno.myAccount.onhand.entity.Onhand;
 import com.miteno.myAccount.onhand.form.OnhandForm;
+import com.miteno.myAccount.sell.entity.Sell;
 
 @Service("onhandService")
 public class OnhandService {
@@ -82,6 +83,25 @@ public class OnhandService {
 			getSellLowest(onhand);
 			
 			onhandDao.merge(onhand);
+		}
+	}
+	
+	public void save(Sell sell){
+		String stockId = sell.getStock_id();
+		double buyMount = sell.getSell_mount();
+		double theEnd = sell.getThe_end();
+		
+		onhand = onhandDao.get(Onhand.class, stockId);
+		
+		//更新合并
+		buyMount = onhand.getBuy_mount()-buyMount;
+		if(buyMount>0){
+			onhand.setBuy_mount(buyMount);
+			theEnd = onhand.getThe_end()-theEnd;
+			onhand.setThe_end(theEnd);
+			onhandDao.merge(onhand);
+		}else{
+			onhandDao.delete(Onhand.class, stockId);
 		}
 	}
 	

@@ -21,15 +21,15 @@
     <param-name>fastDfsHttpServer</param-name>
     <param-value>http://106.2.168.138:8887/</param-value>
   </context-param>
-  <filter>
-    <description>FormInterceptor</description>
-    <filter-name>FormInterceptor</filter-name>
-    <filter-class>com.miteno.form.web.filter.FormInterceptor</filter-class>
-  </filter>
-  <filter-mapping>
-    <filter-name>FormInterceptor</filter-name>
-    <url-pattern>/*</url-pattern>
-  </filter-mapping>
+<!--   <filter> -->
+<!--     <description>FormInterceptor</description> -->
+<!--     <filter-name>FormInterceptor</filter-name> -->
+<!--     <filter-class>com.miteno.form.web.filter.FormInterceptor</filter-class> -->
+<!--   </filter> -->
+<!--   <filter-mapping> -->
+<!--     <filter-name>FormInterceptor</filter-name> -->
+<!--     <url-pattern>/*</url-pattern> -->
+<!--   </filter-mapping> -->
   <filter>
     <description>解决事务提交后延时加载提示 session 已经关闭的问题,即用于支持hibernate配置延时加载</description>
     <filter-name>OpenSessionInViewFilter</filter-name>

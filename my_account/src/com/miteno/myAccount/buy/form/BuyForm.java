@@ -17,6 +17,9 @@ public class BuyForm extends Page<Buy> {
 	private String costs;// 每股成本
 	private String the_end;// 成交额
 	private String sell_lowest;// 最低卖出价格
+	private String create_start_date;
+	private String create_end_date;
+	private String record_flag;//记录标识 0：为记录到我的股票  1：已记录
 	
 	public String getStock_id() {
 		return stock_id;
@@ -89,5 +92,23 @@ public class BuyForm extends Page<Buy> {
 	}
 	public void setSell_lowest(String sell_lowest) {
 		this.sell_lowest = sell_lowest;
+	}
+	public String getCreate_start_date() {
+		return create_start_date;
+	}
+	public void setCreate_start_date(String create_start_date) {
+		this.create_start_date = create_start_date;
+	}
+	public String getCreate_end_date() {
+		return create_end_date;
+	}
+	public void setCreate_end_date(String create_end_date) {
+		this.create_end_date = create_end_date;
+	}
+	public String getRecord_flag() {
+		return record_flag;
+	}
+	public void setRecord_flag(String record_flag) {
+		this.record_flag = record_flag;
 	}
 }

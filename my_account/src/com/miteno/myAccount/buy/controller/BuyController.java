@@ -41,11 +41,31 @@ public class BuyController {
 		buyService.save(buy);
 		return "redirect:" + referer;
 	}
-	
+	@RequestMapping(value = "edit", method = GET)
+	public String edit(@RequestParam String id, HttpServletRequest req,Model model){
+		String url = req.getHeader("referer");
+		Buy buy = buyService.queryById(id);
+		model.addAttribute("buy", buy);
+		model.addAttribute("referer", url);
+		return "buy/edit";
+	}
+
+	@RequestMapping(value = "edit", method = POST)
+	public String edit(Buy buy,String referer,	Model model){
+		buyService.update(buy);
+		return "redirect:" + referer;
+	}
 	@RequestMapping(value = "delete")
 	public String delete(@RequestParam String id, HttpServletRequest req){
 		buyService.delete(id);
 		String url = req.getHeader("referer");
 		return "redirect:" + url;
 	}
+	
+	@RequestMapping(value = "record")
+	public String record(String id, Model model){
+		buyService.record(id);
+		return "redirect:list";
+	}
+	
 }

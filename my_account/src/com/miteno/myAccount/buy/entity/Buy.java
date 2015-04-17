@@ -31,6 +31,7 @@ public class Buy implements java.io.Serializable{
 	private double transfer_fee;// 过户费
 	private double costs;// 每股成本
 	private double the_end;// 成交额
+	private String record_flag;//记录标识 0：为记录到我的股票  1：已记录
 	
 	@OneToOne
 	@JoinColumn(name = "stock_id", referencedColumnName = "stock_id", insertable = false, updatable = false)
@@ -130,6 +131,14 @@ public class Buy implements java.io.Serializable{
 
 	public void setStock(Stock stock) {
 		this.stock = stock;
+	}
+
+	public String getRecord_flag() {
+		return record_flag;
+	}
+
+	public void setRecord_flag(String record_flag) {
+		this.record_flag = record_flag;
 	}
 
 }

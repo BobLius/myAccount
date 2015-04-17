@@ -12,13 +12,13 @@
 <html>
 <head>
 	<base href="<%=basePath%>">
-	<title>买入编辑</title>
+	<title>卖出编辑</title>
 	
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="买入编辑">
+	<meta http-equiv="description" content="卖出编辑">
 	<link href="resources/css5/jh.css" rel="stylesheet" type="text/css" />
 	<link href="resources/css5/ccb.css" rel="stylesheet" type="text/css" />
 	<link href="resources/css5/B.css" rel="stylesheet" type="text/css" />
@@ -65,16 +65,16 @@
 		        empty:{leftEmpty:false,rightEmpty:false,emptyError:"前后不能带空格"},
 		        onError: "股票代码输入不正确"
 		    });
-		    $("#buy_mount").formValidator({
+		    $("#sell_mount").formValidator({
 		        onShow: "",
 		        onCorrect: "输入正确"
 		    }).inputValidator({
 		        min: "1",
 		        max: "100",
 		        empty:{leftEmpty:false,rightEmpty:false,emptyError:"前后不能带空格"},
-		        onError: "买入股数输入不正确"
+		        onError: "卖出股数输入不正确"
 		    });
-		    $("#buy_every_money").formValidator({
+		    $("#sell_every_money").formValidator({
 		        onShow: "",
 		        onCorrect: "输入正确"
 		    }).inputValidator({
@@ -84,24 +84,23 @@
 		        onError: "每股价格输入不正确"
 		    });
 		    
-		    
-			$('#stock_id' ).autocomplete("<%=basePath%>stock/autoCompleteStock",{
-					max : 10, //列表里的条目数
-					minChars : 0, //自动完成激活之前填入的最小字符
-					width : 400, //提示的宽度，溢出隐藏
-					scrollHeight : 300, //提示的高度，溢出显示滚动条
-					matchContains : true, //包含匹配，就是data参数里的数据，是否只要包含文本框里的数据就显示
-					autoFill : false, //自动填充
-					//dataType : "json", //json类型
-					parse : function(data) {
-					return $.map(eval(data), function(row) {
-							return {
-								data : row,
-							value : row.name,
-							result : row.to
-							}
-						}); //对ajax页面传过来的数据进行json转码
-					},
+		    $('#stock_id' ).autocomplete("<%=basePath%>stock/autoCompleteStock",{
+				max : 10, //列表里的条目数
+				minChars : 0, //自动完成激活之前填入的最小字符
+				width : 400, //提示的宽度，溢出隐藏
+				scrollHeight : 300, //提示的高度，溢出显示滚动条
+				matchContains : true, //包含匹配，就是data参数里的数据，是否只要包含文本框里的数据就显示
+				autoFill : false, //自动填充
+				//dataType : "json", //json类型
+				parse : function(data) {
+				return $.map(eval(data), function(row) {
+						return {
+							data : row,
+						value : row.name,
+						result : row.to
+						}
+					}); //对ajax页面传过来的数据进行json转码
+				},
 				formatItem : function(row, i, max) {
 					return i + '/' + max + ':"' + row.name+ '"[' + row.to + ']';
 				},
@@ -114,7 +113,6 @@
 			}).result(function(event, row, formatted) {
 				$("#stock_id").val(row.to);
 			});	
-		    
 		    
 		    /** input 加样式 */
 		    $("#form1 input").css("float","left");
@@ -129,11 +127,11 @@
 
 <body bgcolor='#FFFFFF' text='#000000' leftmargin='0' topmargin='0'
 	marginwidth='0' marginheight='0' >
-	<sf:form modelAttribute="buy" name="form1"  id="form1">
+	<sf:form modelAttribute="sell" name="form1"  id="form1">
 		<table border="1" class="Table_N" cellspacing="0" cellpadding="5"
 			align="center" width="100%">
 			<tr class="Table_H">
-				<td nowrap colspan="2" class="Table_H" height="30">买入编辑： 
+				<td nowrap colspan="2" class="Table_H" height="30">卖出编辑： 
 					<font color="red"> </font>
 					<input type="hidden" name="referer" value="${referer}"/>
 					<input type="hidden" name="record_flag" value="0"/>
@@ -146,15 +144,15 @@
 				</td>
 			</tr>
 			<tr>
-				<td align="center">买入股数</td>
-				<td><sf:input path="buy_mount" placeholder="买入股数" maxlength="30" size="30"  id="buy_mount" required="required"/>
-					<span id="buy_mountTip" style="width:300px"></span>
+				<td align="center">卖出股数</td>
+				<td><sf:input path="sell_mount" placeholder="卖出股数" maxlength="30" size="30"  id="sell_mount" required="required"/>
+					<span id="sell_mountTip" style="width:300px"></span>
 				</td>
 			</tr>
 			<tr>
 				<td align="center">每股价格</td>
-				<td><sf:input path="buy_every_money" placeholder="每股价格" maxlength="25" size="30" id="buy_every_money" required="required"/>
-					<span id="buy_every_moneyTip" style="width:300px"></span>
+				<td><sf:input path="sell_every_money" placeholder="每股价格" maxlength="25" size="30" id="sell_every_money" required="required"/>
+					<span id="sell_every_moneyTip" style="width:300px"></span>
 				</td>
 			</tr>
 		</table>

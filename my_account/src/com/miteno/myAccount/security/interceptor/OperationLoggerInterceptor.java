@@ -17,8 +17,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -43,7 +41,7 @@ import com.miteno.myAccount.security.user.entity.User;
  *    
  */
 public class OperationLoggerInterceptor extends HandlerInterceptorAdapter{
-	private final static Logger logger = LoggerFactory.getLogger(OperationLoggerInterceptor.class);
+//	private final static Logger logger = LoggerFactory.getLogger(OperationLoggerInterceptor.class);
 	@javax.annotation.Resource
 	private ResourceService resourceService;
 	
@@ -113,7 +111,7 @@ public class OperationLoggerInterceptor extends HandlerInterceptorAdapter{
 			}
 			
 			} catch (Exception e) {
-				logger.error("URL:"+requestURI+"未找到！",e);
+//				logger.error("URL:"+requestURI+"未找到！",e);
 			}
 	
 		super.postHandle(request, response, handler, modelAndView);

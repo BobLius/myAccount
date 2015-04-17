@@ -86,7 +86,7 @@ public class ResourceService {
 		return resourceDao.findAllByCriteria(Resource.class, Restrictions.eq("parent.id", pid)).get(0);
 	}
 	public Resource getResourceByUrl(final String url){
-			List<Resource> list = resourceDao.findAllByCriteria(Resource.class,Restrictions.eq("url", url));
-			return list.get(0);
+//			List<Resource> list = resourceDao.findAllByCriteria(Resource.class,Restrictions.eq("url", url));
+			return null;
 	}
 }

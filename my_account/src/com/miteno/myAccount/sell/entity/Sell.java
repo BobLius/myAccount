@@ -3,8 +3,12 @@ package com.miteno.myAccount.sell.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 import org.hibernate.annotations.GenericGenerator;
+
+import com.miteno.myAccount.stock.entity.Stock;
 
 @Entity(name = "sell")
 public class Sell implements java.io.Serializable{
@@ -27,7 +31,12 @@ public class Sell implements java.io.Serializable{
 	private double transfer_fee;//过户费
 	private double stamp;//印花税
 	private double the_end;//成交额
+	private String record_flag;//记录标识 0：为记录到我的股票  1：已记录
 	
+	@OneToOne
+	@JoinColumn(name = "stock_id", referencedColumnName = "stock_id", insertable = false, updatable = false)
+	private Stock stock;
+
 	public String getId() {
 		return id;
 	}
@@ -93,5 +102,17 @@ public class Sell implements java.io.Serializable{
 	}
 	public void setThe_end(double the_end) {
 		this.the_end = the_end;
+	}
+	public Stock getStock() {
+		return stock;
+	}
+	public void setStock(Stock stock) {
+		this.stock = stock;
+	}
+	public String getRecord_flag() {
+		return record_flag;
+	}
+	public void setRecord_flag(String record_flag) {
+		this.record_flag = record_flag;
 	}
 }

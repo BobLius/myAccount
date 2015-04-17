@@ -32,10 +32,23 @@ public class BuyService {
 				.forClass(Buy.class);
 		String stockId = buyForm.getStock_id();
 		String stockName = buyForm.getStock_name();
+		String createStartDate = buyForm.getCreate_start_date();
+		String creatEndDate = buyForm.getCreate_end_date();
+		String recordFlag = buyForm.getRecord_flag();
+		
 		detachedCriteria.addOrder(Order.desc("buy_date"));
 		
+		if (StringUtils.isNotEmpty(createStartDate)) {
+			detachedCriteria.add(Restrictions.ge("buy_date", createStartDate));
+		}
+		if (StringUtils.isNotEmpty(creatEndDate)) {
+			detachedCriteria.add(Restrictions.le("buy_date", creatEndDate));
+		}
 		if(!StringUtils.isEmpty(stockId)){
 			detachedCriteria.add(Restrictions.eq("stock_id",stockId));
+		}
+		if(!StringUtils.isEmpty(recordFlag)){
+			detachedCriteria.add(Restrictions.eq("record_flag",recordFlag));
 		}
 		if (StringUtils.isNotEmpty(stockName)) {
 			detachedCriteria.createAlias("stock", "stock");
@@ -62,15 +75,33 @@ public class BuyService {
 		buy.setBuy_date(new SimpleDateFormat("yyyyMMdd").format(new Date()));
 		//存储买入
 		buyDao.save(buy);
-		//存储到我的股票
-		onhandService.save(buy);
 	}
 	public void update(Buy buy){
+		//设置总买入价格
+		getBuyTolleMoney(buy);
+		//设置佣金率和佣金
+		brokerageService.getCurrentBrokerage(buy);
+		//设置过户费
+		getTransferFee(buy);
+		//计算成本、成交额
+		getcosts(buy);
+		//设置买入时间
 		buy.setBuy_date(new SimpleDateFormat("yyyyMMdd").format(new Date()));
 		buyDao.merge(buy);
 	}
 	public void delete(String buyId){
 		buyDao.delete(Buy.class, buyId);
+	}
+	public Buy queryById(String id){
+		Buy buy = buyDao.get(Buy.class, id);
+		return buy;
+	}
+	public void record(String id){
+		Buy buy = buyDao.get(Buy.class, id);
+		buy.setRecord_flag("1");
+		buyDao.merge(buy);
+		//存储到我的股票
+		onhandService.save(buy);
 	}
 	
 	/**

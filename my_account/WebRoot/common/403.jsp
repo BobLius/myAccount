@@ -1,4 +1,3 @@
-<%@page import="com.miteno.framework.spring.CustomizedPropertyPlaceholderConfigurer"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" isErrorPage="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -29,9 +28,6 @@ request.setAttribute("logoutUrl", basePath+"j_spring_cas_security_logout");
   </head>
   
   <body>
-   <%
-	String local_context = CustomizedPropertyPlaceholderConfigurer.getContextProperty("local.context")+"";
-   %>
   <% 
   
     System.out.println("  对不起,你没有权限访问该页面!!");

@@ -49,16 +49,22 @@
 			}
 			function del(){
 				  var value = $("#table").find("input[name='cbox']:checked").val();
+				  var record = $("#"+value).val();
 				  if(value==null){
 				  	alert("请选择数据进行删除操作");
+				  }else if(record=="1"){
+				    	alert("该记录已记录到我的股票，不可删除");
 				  }else{
 				  	document.location.href='<%=basePath%>buy/delete?id='+value;
 				  }
 			}
 			function edit(){
 			    var value = $("#table").find("input[name='cbox']:checked").val();
+			    var record = $("#"+value).val();
 			    if(value==null){
 			    	alert("请选择一条记录进项操作");
+			    }else if(record=="1"){
+			    	alert("该记录已记录到我的股票，不可修改");
 			    }else{
 			    	document.location.href='<%=basePath%>buy/edit?id='+value;
 			    }
@@ -69,6 +75,17 @@
 			    	alert("请选择一条记录进行查看");
 			    }else{
 			    	document.location.href='<%=basePath%>buy/view?id='+value;
+			    }
+			}
+			function record(){
+				var value = $("#table").find("input[name='cbox']:checked").val();
+				var record = $("#"+value).val();
+			    if(value==null){
+			    	alert("请选择一条记录进行操作");
+			    }else if(record=="1"){
+			    	alert("该记录已记录到我的股票");
+			    }else{
+			    	document.location.href='<%=basePath%>buy/record?id='+value;
 			    }
 			}
 			function box(cb){
@@ -122,6 +139,17 @@ td {
 				<td nowrap colspan="13" height="50" valign="middle">
 					股票代码：<sf:input path="stock_id" />
 					股票代码：<sf:input path="stock_name" />
+					是否已记录到我的股票：
+					<sf:select path="record_flag" style = "width:100px;">
+						<sf:option value="">全部</sf:option>
+						<sf:option value="0">未记录 </sf:option>
+						<sf:option value="1">已记录 </sf:option>
+					</sf:select>
+					<br/>
+					买入时间：
+					<sf:input type="text" path="create_start_date" onClick="WdatePicker({dateFmt:'yyyyMMdd'})"/>
+					至
+					<sf:input type="text" path="create_end_date" onClick="WdatePicker({dateFmt:'yyyyMMdd'})"/>
 					<input type="submit" value="查询" 	name="queryButton" class="button">
 				</td>
 			</tr>
@@ -135,6 +163,8 @@ td {
 						<li><input type="button" value="删除" onClick="del()"
 							class="button"></li>
 						<li><input type="button" value="查看" onClick="view()"
+							class="button"></li>
+						<li><input type="button" value="记录到我的股票" onClick="record()"
 							class="button"></li>
 					</ul>
 				</td>
@@ -152,6 +182,7 @@ td {
 				<td nowrap align="center">过户费</td>
 				<td nowrap align="center">每股成本</td>
 				<td nowrap align="center">成交额</td>
+				<td nowrap align="center">是否已记录</td>
 			</tr>
 
 			<c:forEach items="${form.data}" var="buy" varStatus="i">
@@ -164,8 +195,10 @@ td {
 					</c:otherwise>
 				</c:choose>
 				<tr onclick="clk(this)">
-					<td align="center"><input type="checkbox" name="cbox"
-						onClick="box(this)" id="chb" value="${buy.id}" /></td>
+					<td align="center">
+						<input type="checkbox" name="cbox"	onClick="box(this)" id="chb" value="${buy.id}" />
+						<input type="hidden" id="${buy.id}" value="${buy.record_flag}"/>
+					</td>
 					<td align="center">
 						<fmt:parseDate value="${buy.buy_date}" var="buy_date" pattern="yyyyMMdd"/>  
 			            <fmt:formatDate value="${buy_date}" type="date" dateStyle="long"/>
@@ -180,6 +213,10 @@ td {
 					<td align="center">${buy.transfer_fee}</td>
 					<td align="center">${buy.costs}</td>
 					<td align="center">${buy.the_end}</td>
+					<td align="center">
+						<c:if test="${buy.record_flag=='0'}">未记录</c:if>
+						<c:if test="${buy.record_flag=='1'}">已记录</c:if>
+					</td>
 				</tr>
 			</c:forEach>
 		</table>
@@ -187,4 +224,6 @@ td {
 	</sf:form>
 </body>
 <script language="JavaScript" src="resources/js5/bgcolor.js"></script>
+<script language="javascript" type="text/javascript"
+	src="<%=basePath%>resources/js5/My97DatePicker/WdatePicker.js"></script>
 </html>

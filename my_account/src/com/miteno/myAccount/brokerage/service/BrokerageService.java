@@ -16,6 +16,7 @@ import com.miteno.common.dao.hibernate.HibernateDao;
 import com.miteno.myAccount.brokerage.entity.Brokerage;
 import com.miteno.myAccount.brokerage.form.BrokerageForm;
 import com.miteno.myAccount.buy.entity.Buy;
+import com.miteno.myAccount.sell.entity.Sell;
 
 @Service("brokerageService")
 public class BrokerageService {
@@ -89,6 +90,19 @@ public class BrokerageService {
 			buy.setBrokerage(5);
 		}else{
 			buy.setBrokerage(result);
+		}
+	}
+	
+	public void getCurrentBrokerage(Sell sell){
+		double currentBrokerageRate=getBrokerageRate();
+		sell.setBrokerage_rate(currentBrokerageRate);
+		double buyTolleMoney = sell.getSell_tolle_money();
+		double rate = currentBrokerageRate;
+		double result = buyTolleMoney*rate/1000.0;
+		if(result<5.0){
+			sell.setBrokerage(5);
+		}else{
+			sell.setBrokerage(result);
 		}
 	}
 	

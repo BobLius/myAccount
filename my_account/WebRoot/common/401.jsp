@@ -1,4 +1,3 @@
-<%@page import="com.miteno.framework.spring.CustomizedPropertyPlaceholderConfigurer"%>
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8" contentType="text/html;charset=utf-8"
 	isErrorPage="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

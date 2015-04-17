@@ -124,7 +124,12 @@ td {
 					<sf:input type="text" path="create_start_date" onClick="WdatePicker({dateFmt:'yyyyMMdd'})"/>
 					至
 					<sf:input type="text" path="create_end_date" onClick="WdatePicker({dateFmt:'yyyyMMdd'})"/>
-					有效标识：<sf:input path="flag" />
+					有效标识：
+					<sf:select path="flag" style = "width:100px;">
+						<sf:option value="">全部</sf:option>
+						<sf:option value="0">当前佣金率 </sf:option>
+						<sf:option value="1">过期佣金率 </sf:option>
+					</sf:select>
 					<input type="submit" value="查询" name="queryButton" class="button">
 				</td>
 			</tr>

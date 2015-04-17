@@ -32,7 +32,6 @@
 	<link href="resources/css5/ui.jqgrid.css" rel="stylesheet" type="text/css" />
 	<link href="resources/css5/searchFilter.css" rel="stylesheet" type="text/css" />
 	
-	<!-- <!-- <script src="resources/jquery/jquery-1.4.4.min.js" type="text/javascript"></script>jquery 必须库 -->
 	<script src="resources/jquery/jquery-1.10.2.min.js" type="text/javascript"></script>
 	 <!-- jquery ui 引入的js -->
 	<script src="resources/jquery/jqueryUi/jquery-ui-1.10.3.custom.js" type="text/javascript"></script>

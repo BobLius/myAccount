@@ -1,4 +1,3 @@
-<%@page import="com.miteno.framework.spring.CustomizedPropertyPlaceholderConfigurer"%>
 <%@page import="org.springframework.core.env.Environment"%>
 <%@page import="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"%>
 <%@page import="org.springframework.context.ApplicationContext"%>
@@ -28,10 +27,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </script>
   
   <body>
-  <%
-	String login_url = CustomizedPropertyPlaceholderConfigurer.getContextProperty("cas.localLoginUrl")+"";
-	request.setAttribute("login_url", login_url);
-   %>
   
   <% 
     System.out.println("bms login_sso ..."+login_url);

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50530
 File Encoding         : 65001
 
-Date: 2015-04-16 16:24:01
+Date: 2015-04-17 16:09:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -30,7 +30,6 @@ CREATE TABLE `brokerage` (
 -- ----------------------------
 -- Records of brokerage
 -- ----------------------------
-INSERT INTO `brokerage` VALUES ('402890ba4cc0cf46014cc0d21de20001', '20150416', '0', '0.800');
 
 -- ----------------------------
 -- Table structure for `buy`
@@ -48,14 +47,13 @@ CREATE TABLE `buy` (
   `transfer_fee` double(100,3) DEFAULT NULL COMMENT '过户费',
   `costs` double(100,3) DEFAULT NULL COMMENT '每股成本',
   `the_end` double(100,3) DEFAULT NULL COMMENT '成交额',
+  `record_flag` varchar(1) DEFAULT NULL COMMENT '记录标识',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of buy
 -- ----------------------------
-INSERT INTO `buy` VALUES ('402890ba4cc11d2a014cc11dcae20000', '601398', '20150416', '300.000', '5.000', '1500.000', '5.000', '0.800', '0.180', '5.017', '1505.180');
-INSERT INTO `buy` VALUES ('402890ba4cc11d2a014cc11f42080001', '601398', '20150416', '1000.000', '5.500', '5500.000', '5.000', '0.800', '0.600', '5.506', '5505.600');
 
 -- ----------------------------
 -- Table structure for `onhand`
@@ -73,7 +71,6 @@ CREATE TABLE `onhand` (
 -- ----------------------------
 -- Records of onhand
 -- ----------------------------
-INSERT INTO `onhand` VALUES ('601398', '1300.000', '5.393', '7010.780', '5.403');
 
 -- ----------------------------
 -- Table structure for `resources`
@@ -153,7 +150,7 @@ DROP TABLE IF EXISTS `sell`;
 CREATE TABLE `sell` (
   `id` varchar(100) NOT NULL,
   `stock_id` varchar(100) DEFAULT NULL COMMENT '股票代码',
-  `sell_date` varchar(0) DEFAULT NULL COMMENT '卖出时间',
+  `sell_date` varchar(100) DEFAULT NULL COMMENT '卖出时间',
   `sell_mount` double(100,3) DEFAULT NULL COMMENT '卖出股数',
   `sell_every_money` double(100,3) DEFAULT NULL COMMENT '每股价格',
   `sell_tolle_money` double(100,3) DEFAULT NULL COMMENT '总卖出价格',
@@ -162,6 +159,7 @@ CREATE TABLE `sell` (
   `transfer_fee` double(100,3) DEFAULT NULL COMMENT '过户费',
   `stamp` double(100,3) DEFAULT NULL COMMENT '印花税',
   `the_end` double(100,3) DEFAULT NULL COMMENT '成交额',
+  `record_flag` varchar(1) DEFAULT NULL COMMENT '记录标识',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
