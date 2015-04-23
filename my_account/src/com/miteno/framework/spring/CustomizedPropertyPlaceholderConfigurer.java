@@ -21,7 +21,7 @@ import org.springframework.util.PropertyPlaceholderHelper;
 
 /**   
 *    
-* 项目名称：bms   
+* 项目名称：myAccount   
 * 类名称：CustomizedPropertyPlaceholderConfigurer   
 * 类描述：   继承spring中的占位符配置类，增加快速取得其中属性的方法
 * 创建人：lzh   

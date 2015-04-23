@@ -29,7 +29,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
   
   <% 
-    System.out.println("bms login_sso ..."+login_url);
 	request.setCharacterEncoding("UTF-8");
 	response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 	response.setCharacterEncoding("UTF-8");

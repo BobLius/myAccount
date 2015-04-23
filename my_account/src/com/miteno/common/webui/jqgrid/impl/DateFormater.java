@@ -16,7 +16,7 @@ import com.miteno.common.webui.jqgrid.Formatter;
 
 /**   
  *    
- * 项目名称：bms   
+ * 项目名称：myAccount   
  * 类名称：Dateformater   
  * 类描述：   
  * 创建人：dell   

@@ -18,7 +18,7 @@ import com.miteno.common.webui.jqgrid.impl.TimestampFormater;
 
 /**   
 *    
-* 项目名称：bms   
+* 项目名称：myAccount   
 * 类名称：Serializer   
 * 类描述：   页面JQGrid需要的数据组装
 * 创建人：zhanghao  

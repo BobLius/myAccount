@@ -11,7 +11,7 @@ package com.miteno.myAccount.security.exception;
 
 /**   
  *    
- * 项目名称：bms   
+ * 项目名称：myAccount   
  * 类名称：ResourceNotFoundException   
  * 类描述：   资源未找到异常，一般在根据条件检索权限菜单资源未找到时触发
  * 创建人：lzh   

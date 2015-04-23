@@ -27,7 +27,7 @@ import com.miteno.myAccount.security.user.entity.User;
 
 /**   
  *    
- * 项目名称：bms   
+ * 项目名称：myAccount   
  * 类名称：Log   
  * 类描述：   用于记录操作员操作日志的流水表
  * 创建人：tao  

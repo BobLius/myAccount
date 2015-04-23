@@ -11,7 +11,7 @@ package com.miteno.common.webui.jqgrid;
 
 /**   
  *    
- * 项目名称：bms   
+ * 项目名称：myAccount   
  * 类名称：Formatter   
  * 类描述：   getSupport方法返回类的.class，是用来作为Serializer类的成员变量中的键
  * 创建人：dell   

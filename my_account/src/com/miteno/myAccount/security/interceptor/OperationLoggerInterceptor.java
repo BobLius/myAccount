@@ -29,7 +29,7 @@ import com.miteno.myAccount.security.user.entity.User;
 
 /**   
  *    
- * 项目名称：bms   
+ * 项目名称：myAccount   
  * 类名称：OperationLoggerInterceptor   
  * 类描述：   
  * 创建人：lzh   

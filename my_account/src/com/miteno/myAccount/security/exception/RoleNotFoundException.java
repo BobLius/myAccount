@@ -11,7 +11,7 @@ package com.miteno.myAccount.security.exception;
 
 /**   
  *    
- * 项目名称：bms   
+ * 项目名称：myAccount   
  * 类名称：RoleNotFoundException   
  * 类描述：   角色未找到异常
  * 创建人：lzh   

@@ -250,7 +250,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 		<!-- End TopCMP_FirstMenu -->
 	</div>
-	</div>
 	<div data-options="region:'west',split:true" title="导航菜单"
 		style="width:216px;">
 		

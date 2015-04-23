@@ -26,7 +26,7 @@ import com.miteno.myAccount.security.log.form.LogForm;
 
 /**   
  *    
- * 项目名称：bms   
+ * 项目名称：myAccount   
  * 类名称：LogService   
  * 类描述：   操作员日志查看、查询的服务类
  * 创建人：lzh   

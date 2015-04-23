@@ -11,7 +11,7 @@ package com.miteno.myAccount.security.exception;
 
 /**   
  *    
- * 项目名称：bms   
+ * 项目名称：myAccount   
  * 类名称：UserNotFoundException   
  * 类描述：   后台管理用户未找到异常
  * 创建人：lzh   

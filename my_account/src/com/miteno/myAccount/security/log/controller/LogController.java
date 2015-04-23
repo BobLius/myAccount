@@ -23,7 +23,7 @@ import com.miteno.myAccount.security.log.service.LogService;
 
 /**   
  *    
- * 项目名称：bms   
+ * 项目名称：myAccount   
  * 类名称：LogController   
  * 类描述：   用于日志流水查看和查询的控制器类
  * 创建人：lzh   

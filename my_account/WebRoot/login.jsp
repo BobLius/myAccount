@@ -57,7 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body onload="init()"> 
   <span style="color:red"><% Object authException = session.getAttribute(WebAttributes.AUTHENTICATION_EXCEPTION); %>
-	
+	</span>
 	<form action="j_spring_security_check" method="post" name="form1">
 		<div class="LoginCMP_container">
 			<div class="LoginCMP_BodyLogo"></div>
