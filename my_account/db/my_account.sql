@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50530
 File Encoding         : 65001
 
-Date: 2015-04-23 16:02:27
+Date: 2015-04-24 16:49:41
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -55,8 +55,8 @@ CREATE TABLE `buy` (
 -- ----------------------------
 -- Records of buy
 -- ----------------------------
-INSERT INTO `buy` VALUES ('402890ba4ce51a72014ce51b517a0000', '601390', '20150423', '200.000', '18.460', '3692.000', '5.000', '0.000', '0.120', '18.486', '3697.120', '1');
-INSERT INTO `buy` VALUES ('402890ba4ce51a72014ce51c31d90001', '601766', '20150422', '100.000', '30.250', '3025.000', '5.000', '0.000', '0.060', '30.301', '3030.060', '1');
+INSERT INTO `buy` VALUES ('402890ba4ce51a72014ce51b517a0000', '601390', '20150423', '200.000', '18.460', '3692.000', '5.000', '0.000', '0.120', '18.486', '3697.120', '0');
+INSERT INTO `buy` VALUES ('402890ba4ce51a72014ce51c31d90001', '601766', '20150422', '100.000', '30.250', '3025.000', '5.000', '0.000', '0.060', '30.301', '3030.060', '0');
 INSERT INTO `buy` VALUES ('402890ba4ce51a72014ce52e49320003', '601398', '20150127', '200.000', '4.820', '964.000', '5.000', '0.800', '0.120', '4.846', '969.120', '0');
 INSERT INTO `buy` VALUES ('402890ba4ce51a72014ce52f932c0004', '601398', '20150204', '600.000', '4.500', '2700.000', '5.000', '0.800', '0.360', '4.509', '2705.360', '0');
 INSERT INTO `buy` VALUES ('402890ba4ce51a72014ce530ff630005', '601186', '20150320', '200.000', '16.200', '3240.000', '5.000', '0.800', '0.120', '16.226', '3245.120', '0');
@@ -85,8 +85,6 @@ CREATE TABLE `onhand` (
 -- ----------------------------
 -- Records of onhand
 -- ----------------------------
-INSERT INTO `onhand` VALUES ('601390', '200.000', '18.486', '3697.120', '18.530');
-INSERT INTO `onhand` VALUES ('601766', '100.000', '30.301', '3030.060', '30.382');
 
 -- ----------------------------
 -- Table structure for `resources`
@@ -120,6 +118,7 @@ INSERT INTO `resources` VALUES ('003', '/resource', '2', '1', '0', '权限', nul
 INSERT INTO `resources` VALUES ('402890ba4cb6aff7014cb6b4e2b00000', '/user', '1', null, '1', '用户', '', '-1', null, null, null, null, '0', '用户', '001');
 INSERT INTO `resources` VALUES ('402890ba4cc0c04e014cc0c191eb0000', '/onhand/list', null, null, '1', '我的股票', '', '-1', null, null, null, null, '0', '', '4028e0814cbbfb1b014cbbff169d0000');
 INSERT INTO `resources` VALUES ('402890ba4cc1440a014cc14a5bd00000', '/sell/list', null, null, '1', '卖出', '', '-1', null, null, null, null, '0', '', '4028e0814cbbfb1b014cbbff169d0000');
+INSERT INTO `resources` VALUES ('402890ba4ce9ff2c014cea00aa740000', '/stockAssets/list', null, null, '1', '资产', '', '-1', null, null, null, null, '0', '', '4028e0814cbbfb1b014cbbff169d0000');
 INSERT INTO `resources` VALUES ('4028e0814cbbfb1b014cbbff169d0000', '/socket', '1', '1', '0', '股票', '', '-1', null, null, null, null, '0', '', '001');
 INSERT INTO `resources` VALUES ('4028e0814cbbfb1b014cbc04c8870002', '/brokerage/list', null, null, '1', '佣金', '', '-1', null, null, null, null, '0', '', '4028e0814cbbfb1b014cbbff169d0000');
 INSERT INTO `resources` VALUES ('4028e0814cbbfb1b014cbc06839e0003', '/buy/list ', null, null, '1', '买入', '', '-1', null, null, null, null, '0', '', '4028e0814cbbfb1b014cbbff169d0000');
@@ -2289,6 +2288,25 @@ INSERT INTO `stock` VALUES ('601991', '大唐发电');
 INSERT INTO `stock` VALUES ('601992', '金隅股份');
 INSERT INTO `stock` VALUES ('601998', '中信银行');
 INSERT INTO `stock` VALUES ('601999', '出版传媒');
+
+-- ----------------------------
+-- Table structure for `stock_assets`
+-- ----------------------------
+DROP TABLE IF EXISTS `stock_assets`;
+CREATE TABLE `stock_assets` (
+  `total_assets` double(100,3) DEFAULT '0.000' COMMENT '总资产',
+  `use_assets` double(100,3) DEFAULT NULL COMMENT '可用资产',
+  `stock_assets` double(100,3) DEFAULT NULL COMMENT '证券资产',
+  `principal` double(100,3) DEFAULT NULL COMMENT '本金',
+  `profit_loss` double(100,3) DEFAULT NULL COMMENT '总盈亏',
+  `current_dates` varchar(100) DEFAULT NULL COMMENT '截止到当前时间',
+  `id` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of stock_assets
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for `user`

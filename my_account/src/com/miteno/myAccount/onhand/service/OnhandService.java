@@ -15,6 +15,7 @@ import com.miteno.myAccount.buy.entity.Buy;
 import com.miteno.myAccount.onhand.entity.Onhand;
 import com.miteno.myAccount.onhand.form.OnhandForm;
 import com.miteno.myAccount.sell.entity.Sell;
+import com.miteno.myAccount.stockAssets.service.StockAssetsService;
 
 @Service("onhandService")
 public class OnhandService {
@@ -22,6 +23,8 @@ public class OnhandService {
 	private HibernateDao<Onhand,String> onhandDao;
 	@Resource
 	private BrokerageService brokerageService;
+	@Resource
+	private StockAssetsService stockAssetsService;
 	private Onhand onhand = new Onhand();
 	
 	public OnhandForm search(OnhandForm onhandForm) {
@@ -70,10 +73,14 @@ public class OnhandService {
 			getSellLowest(onhand);
 			
 			onhandDao.save(onhand);
+			//减去可用资产
+			stockAssetsService.calculateUseAssets("buy", theEnd);
 		}else{
 			//更新合并
 			buyMount = buyMount+onhand.getBuy_mount();
 			onhand.setBuy_mount(buyMount);
+			//减去可用资产
+			stockAssetsService.calculateUseAssets("buy", theEnd);
 			theEnd = theEnd+onhand.getThe_end();
 			onhand.setThe_end(theEnd);
 			costs = theEnd/buyMount;
@@ -92,7 +99,7 @@ public class OnhandService {
 		double theEnd = sell.getThe_end();
 		
 		onhand = onhandDao.get(Onhand.class, stockId);
-		
+		stockAssetsService.calculateUseAssets("sell", theEnd);
 		//更新合并
 		buyMount = onhand.getBuy_mount()-buyMount;
 		if(buyMount>0){
