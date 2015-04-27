@@ -20,6 +20,9 @@ public class StockAssetsService {
 	@Resource
 	private HibernateDao<Onhand,String> onhandDao;
 	
+	/**
+	 * 获取证券资产
+	 */
 	public StockAssets getStockAssets(){
 		StockAssets stockAssets = new StockAssets();
 		List<StockAssets> stockAssetsList = stockAssetsDao.findAllByCriteria(StockAssets.class);
@@ -30,10 +33,13 @@ public class StockAssetsService {
 		double calculateAllStockCurrentValue = calculateAllStockCurrentValue();
 		stockAssets.setStock_assets(calculateAllStockCurrentValue);
 		stockAssets.setTotal_assets(calculateAllStockCurrentValue+stockAssets.getUse_assets());
-		stockAssets.setProfit_loss(stockAssets.getTotal_assets()-stockAssets.getUse_assets());
+		stockAssets.setProfit_loss(stockAssets.getTotal_assets()-stockAssets.getPrincipal());
 		return stockAssets;
 	}
 	
+	/**
+	 * 存储本金
+	 */
 	public void savePrincipal(StockAssets stockAssets){
 		double oldPrincipal = 0;
 		double principal = stockAssets.getPrincipal();
@@ -68,6 +74,9 @@ public class StockAssetsService {
 		}
 	}
 	
+	/**
+	 * 计算可用资产
+	 */
 	public void calculateUseAssets(String type,double theEnd){
 		StockAssets stockAssets= getStockAssets();
 		if("buy".equals(type)){
@@ -81,6 +90,9 @@ public class StockAssetsService {
 		}
 	}
 	
+	/**
+	 * 计算所有股票当前市值
+	 */
 	public double calculateAllStockCurrentValue(){
 		StockValue stockValue = new StockValue();
 		List<Onhand> onhandList = onhandDao.findAllByCriteria(Onhand.class);

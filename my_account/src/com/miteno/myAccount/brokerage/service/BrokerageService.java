@@ -60,6 +60,9 @@ public class BrokerageService {
 		brokerageDao.delete(Brokerage.class, brokerageId);
 	}
 	
+	/**
+	 * 重置旧佣金率
+	 */
 	public void resetOldBrokerage(){
 		List<Brokerage> oldBrokerageList = brokerageDao.findAllByCriteria(Brokerage.class, Restrictions.eq("flag", "0"));
 		if(oldBrokerageList!=null&&oldBrokerageList.size()>0){
@@ -78,7 +81,7 @@ public class BrokerageService {
 	/**
 	 * @param 
 	 * 查询最新的佣金率
-	 * 计算佣金，并判断是否大于5元
+	 * 计算佣金，并判断是否大于5元（买入）
 	 */
 	public void getCurrentBrokerage(Buy buy){
 		double currentBrokerageRate=getBrokerageRate();
@@ -93,6 +96,10 @@ public class BrokerageService {
 		}
 	}
 	
+	/**
+	 * 查询最新的佣金率
+	 * 计算佣金，并判断是否大于5元（卖出）
+	 */
 	public void getCurrentBrokerage(Sell sell){
 		double currentBrokerageRate=getBrokerageRate();
 		sell.setBrokerage_rate(currentBrokerageRate);
@@ -106,6 +113,9 @@ public class BrokerageService {
 		}
 	}
 	
+	/**
+	 * 获取最新佣金率
+	 */
 	public double getBrokerageRate(){
 		double currentBrokerageRate=0;
 		List<Brokerage> oldBrokerageList = brokerageDao.findAllByCriteria(Brokerage.class, Restrictions.eq("flag", "0"));

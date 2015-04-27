@@ -112,6 +112,9 @@ public class OnhandService {
 		}
 	}
 	
+	/**
+	 * 计算卖出最低价
+	 */
 	public void getSellLowest(Onhand onhand){
 		String stockId = onhand.getStock_id();
 		double buyMount = onhand.getBuy_mount();

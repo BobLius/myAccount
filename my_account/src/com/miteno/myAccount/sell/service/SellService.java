@@ -90,10 +90,10 @@ public class SellService {
 		brokerageService.getCurrentBrokerage(sell);
 		// 设置过户费
 		getTransferFee(sell);
-		// 计算成本、成交额
-		getcosts(sell);
 		// 计算印花税
 		getstamp(sell);
+		// 计算成本、成交额
+		getcosts(sell);
 		// 设置卖出时间
 		sell.setSell_date(new SimpleDateFormat("yyyyMMdd").format(new Date()));
 		sellDao.merge(sell);
@@ -151,8 +151,9 @@ public class SellService {
 		double buy_tolle_money = sell.getSell_tolle_money();// 总买入价格
 		double transfer_fee = sell.getTransfer_fee();// 过户费
 		double brokerage = sell.getBrokerage();// 佣金
+		double stamp = sell.getStamp();//印花税
 		double the_end = 0;
-		the_end = (buy_tolle_money+transfer_fee+brokerage);
+		the_end = (buy_tolle_money-transfer_fee-brokerage-stamp);
 		
 		sell.setThe_end(the_end);
 	}

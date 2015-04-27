@@ -263,12 +263,7 @@
 		}
 		jQuery(function($){
 			$("#submitButton").click(function(event){
-				var usersLevel = $("#datalevel_name").html();
-				if(usersLevel==null){
-					alert("请选择数据级别");
-				}else{
-					$("#form1").submit();
-				}
+				$("#form1").submit();
 			});
 		});
 	</script>

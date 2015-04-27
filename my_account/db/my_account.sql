@@ -10,10 +10,45 @@ Target Server Type    : MYSQL
 Target Server Version : 50530
 File Encoding         : 65001
 
-Date: 2015-04-24 16:49:41
+Date: 2015-04-27 17:31:30
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for `bank`
+-- ----------------------------
+DROP TABLE IF EXISTS `bank`;
+CREATE TABLE `bank` (
+  `bank_id` varchar(100) NOT NULL DEFAULT '' COMMENT '银行编号',
+  `bank_name` varchar(100) DEFAULT NULL COMMENT '银行名称',
+  PRIMARY KEY (`bank_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of bank
+-- ----------------------------
+INSERT INTO `bank` VALUES ('001', '工商银行');
+INSERT INTO `bank` VALUES ('002', '北京银行');
+INSERT INTO `bank` VALUES ('003', '招商银行');
+INSERT INTO `bank` VALUES ('004', '建设银行');
+
+-- ----------------------------
+-- Table structure for `bank_save`
+-- ----------------------------
+DROP TABLE IF EXISTS `bank_save`;
+CREATE TABLE `bank_save` (
+  `id` varchar(100) NOT NULL DEFAULT '',
+  `bank_id` varchar(100) DEFAULT NULL COMMENT '银行名称',
+  `card_no` varchar(100) DEFAULT NULL COMMENT '卡号',
+  `money` double(100,3) DEFAULT NULL COMMENT '余额',
+  `record_date` varchar(100) DEFAULT NULL COMMENT '记录时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of bank_save
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for `brokerage`
@@ -68,6 +103,24 @@ INSERT INTO `buy` VALUES ('402890ba4ce51a72014ce5357cff000a', '601390', '2015040
 INSERT INTO `buy` VALUES ('402890ba4ce51a72014ce5364701000b', '600048', '20150417', '200.000', '13.820', '2764.000', '5.000', '0.800', '0.120', '13.846', '2769.120', '0');
 INSERT INTO `buy` VALUES ('402890ba4ce51a72014ce5367722000c', '000002', '20150420', '200.000', '14.780', '2956.000', '5.000', '0.800', '0.000', '14.805', '2961.000', '0');
 INSERT INTO `buy` VALUES ('402890ba4ce51a72014ce538262e000d', '600435', '20150408', '200.000', '32.300', '6460.000', '5.168', '0.800', '0.120', '32.326', '6465.288', '0');
+INSERT INTO `buy` VALUES ('402890ba4cf9e74f014cf9edb4170001', '601727', '20150427', '200.000', '18.600', '3720.000', '5.000', '0.800', '0.120', '18.626', '3725.120', '0');
+INSERT INTO `buy` VALUES ('402890ba4cf9e74f014cf9ee441e0003', '002490', '20150427', '200.000', '13.280', '2656.000', '5.000', '0.800', '0.000', '13.305', '2661.000', '0');
+
+-- ----------------------------
+-- Table structure for `manage_finances`
+-- ----------------------------
+DROP TABLE IF EXISTS `manage_finances`;
+CREATE TABLE `manage_finances` (
+  `id` varchar(100) NOT NULL DEFAULT '',
+  `name` varchar(100) DEFAULT NULL,
+  `money` double(100,3) DEFAULT NULL,
+  `record_date` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of manage_finances
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for `onhand`
@@ -119,6 +172,11 @@ INSERT INTO `resources` VALUES ('402890ba4cb6aff7014cb6b4e2b00000', '/user', '1'
 INSERT INTO `resources` VALUES ('402890ba4cc0c04e014cc0c191eb0000', '/onhand/list', null, null, '1', '我的股票', '', '-1', null, null, null, null, '0', '', '4028e0814cbbfb1b014cbbff169d0000');
 INSERT INTO `resources` VALUES ('402890ba4cc1440a014cc14a5bd00000', '/sell/list', null, null, '1', '卖出', '', '-1', null, null, null, null, '0', '', '4028e0814cbbfb1b014cbbff169d0000');
 INSERT INTO `resources` VALUES ('402890ba4ce9ff2c014cea00aa740000', '/stockAssets/list', null, null, '1', '资产', '', '-1', null, null, null, null, '0', '', '4028e0814cbbfb1b014cbbff169d0000');
+INSERT INTO `resources` VALUES ('402890ba4cf8b7e3014cf8b8b1300000', '/bank', '1', '2', '0', '银行', '', '-1', null, null, null, null, '0', '', '001');
+INSERT INTO `resources` VALUES ('402890ba4cf8b7e3014cf8b934660001', '/bank/list', null, null, '1', '银行管理', '', '-1', null, null, null, null, '0', '', '402890ba4cf8b7e3014cf8b8b1300000');
+INSERT INTO `resources` VALUES ('402890ba4cf8f6bb014cf8fb47b90000', '/bankSave/list', null, null, '1', '银行储蓄', '', '-1', null, null, null, null, '0', '', '402890ba4cf8b7e3014cf8b8b1300000');
+INSERT INTO `resources` VALUES ('402890ba4cf98912014cf989c88a0000', '/manageFinances', '1', '3', '0', '理财', '', '-1', null, null, null, null, '0', '', '001');
+INSERT INTO `resources` VALUES ('402890ba4cf98912014cf98a89820001', '/manageFinances/list', null, null, '1', '理财管理', '', '-1', null, null, null, null, '0', '', '402890ba4cf98912014cf989c88a0000');
 INSERT INTO `resources` VALUES ('4028e0814cbbfb1b014cbbff169d0000', '/socket', '1', '1', '0', '股票', '', '-1', null, null, null, null, '0', '', '001');
 INSERT INTO `resources` VALUES ('4028e0814cbbfb1b014cbc04c8870002', '/brokerage/list', null, null, '1', '佣金', '', '-1', null, null, null, null, '0', '', '4028e0814cbbfb1b014cbbff169d0000');
 INSERT INTO `resources` VALUES ('4028e0814cbbfb1b014cbc06839e0003', '/buy/list ', null, null, '1', '买入', '', '-1', null, null, null, null, '0', '', '4028e0814cbbfb1b014cbbff169d0000');
@@ -181,16 +239,17 @@ CREATE TABLE `sell` (
 -- ----------------------------
 -- Records of sell
 -- ----------------------------
-INSERT INTO `sell` VALUES ('402890ba4ce51a72014ce53ac3ac000e', '601398', '20150313', '800.000', '4.650', '3720.000', '5.000', '0.800', '0.480', '3.720', '3725.480', '0');
-INSERT INTO `sell` VALUES ('402890ba4ce51a72014ce53af883000f', '601186', '20150323', '200.000', '16.870', '3374.000', '5.000', '0.800', '0.120', '3.374', '3379.120', '0');
-INSERT INTO `sell` VALUES ('402890ba4ce51a72014ce53b26f40010', '000829', '20150324', '200.000', '15.500', '3100.000', '5.000', '0.800', '0.000', '3.100', '3105.000', '0');
-INSERT INTO `sell` VALUES ('402890ba4ce51a72014ce53be5120011', '601766', '20150325', '200.000', '15.250', '3050.000', '5.000', '0.800', '0.120', '3.050', '3055.120', '0');
-INSERT INTO `sell` VALUES ('402890ba4ce51a72014ce53c173e0012', '601186', '20150330', '200.000', '19.310', '3862.000', '5.000', '0.800', '0.120', '3.862', '3867.120', '0');
-INSERT INTO `sell` VALUES ('402890ba4ce51a72014ce53c61d60013', '000063', '20150401', '200.000', '22.480', '4496.000', '5.000', '0.800', '0.000', '4.496', '4501.000', '0');
-INSERT INTO `sell` VALUES ('402890ba4ce51a72014ce53c96820014', '601390', '20150408', '200.000', '13.370', '2674.000', '5.000', '0.800', '0.120', '2.674', '2679.120', '0');
-INSERT INTO `sell` VALUES ('402890ba4ce51a72014ce53cba6b0015', '600435', '20150417', '200.000', '33.450', '6690.000', '5.352', '0.800', '0.120', '6.690', '6695.472', '0');
-INSERT INTO `sell` VALUES ('402890ba4ce51a72014ce53d0f6f0016', '000002', '20150422', '200.000', '14.820', '2964.000', '5.000', '0.800', '0.000', '2.964', '2969.000', '0');
-INSERT INTO `sell` VALUES ('402890ba4ce51a72014ce53d301b0017', '600048', '20150422', '200.000', '14.220', '2844.000', '5.000', '0.800', '0.120', '2.844', '2849.120', '0');
+INSERT INTO `sell` VALUES ('402890ba4ce51a72014ce53ac3ac000e', '601398', '20150313', '800.000', '4.650', '3720.000', '5.000', '0.800', '0.480', '3.720', '3710.800', '0');
+INSERT INTO `sell` VALUES ('402890ba4ce51a72014ce53af883000f', '601186', '20150323', '200.000', '16.870', '3374.000', '5.000', '0.800', '0.120', '3.374', '3365.506', '0');
+INSERT INTO `sell` VALUES ('402890ba4ce51a72014ce53b26f40010', '000829', '20150324', '200.000', '15.500', '3100.000', '5.000', '0.800', '0.000', '3.100', '3091.900', '0');
+INSERT INTO `sell` VALUES ('402890ba4ce51a72014ce53be5120011', '601766', '20150325', '200.000', '15.250', '3050.000', '5.000', '0.800', '0.120', '3.050', '3041.830', '0');
+INSERT INTO `sell` VALUES ('402890ba4ce51a72014ce53c173e0012', '601186', '20150330', '200.000', '19.310', '3862.000', '5.000', '0.800', '0.120', '3.862', '3853.018', '0');
+INSERT INTO `sell` VALUES ('402890ba4ce51a72014ce53c61d60013', '000063', '20150401', '200.000', '22.480', '4496.000', '5.000', '0.800', '0.000', '4.496', '4486.504', '0');
+INSERT INTO `sell` VALUES ('402890ba4ce51a72014ce53c96820014', '601390', '20150408', '200.000', '13.370', '2674.000', '5.000', '0.800', '0.120', '2.674', '2666.206', '0');
+INSERT INTO `sell` VALUES ('402890ba4ce51a72014ce53cba6b0015', '600435', '20150417', '200.000', '33.450', '6690.000', '5.352', '0.800', '0.120', '6.690', '6677.838', '0');
+INSERT INTO `sell` VALUES ('402890ba4ce51a72014ce53d0f6f0016', '000002', '20150422', '200.000', '14.820', '2964.000', '5.000', '0.800', '0.000', '2.964', '2956.036', '0');
+INSERT INTO `sell` VALUES ('402890ba4ce51a72014ce53d301b0017', '600048', '20150422', '200.000', '14.220', '2844.000', '5.000', '0.800', '0.120', '2.844', '2836.036', '0');
+INSERT INTO `sell` VALUES ('402890ba4cf9e74f014cf9ecb5f90000', '601766', '20150427', '100.000', '35.000', '3500.000', '5.000', '0.800', '0.060', '3.500', '3491.440', '0');
 
 -- ----------------------------
 -- Table structure for `stock`
