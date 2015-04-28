@@ -34,6 +34,7 @@ public class StockAssetsService {
 		stockAssets.setStock_assets(calculateAllStockCurrentValue);
 		stockAssets.setTotal_assets(calculateAllStockCurrentValue+stockAssets.getUse_assets());
 		stockAssets.setProfit_loss(stockAssets.getTotal_assets()-stockAssets.getPrincipal());
+		stockAssetsDao.merge(stockAssets);
 		return stockAssets;
 	}
 	
@@ -102,5 +103,18 @@ public class StockAssetsService {
 			result = result + Double.valueOf(current)*onhandList.get(i).getBuy_mount();
 		}
 		return result;
+	}
+	
+	/**
+	 * 其他资金归入总资产
+	 */
+	public void otherToAsset(double money){
+		StockAssets stockAssets = new StockAssets();
+		List<StockAssets> stockAssetsList = stockAssetsDao.findAllByCriteria(StockAssets.class);
+		if(stockAssetsList!=null&&stockAssetsList.size()>0){
+			stockAssets = stockAssetsList.get(0);
+			stockAssets.setUse_assets(stockAssets.getUse_assets()+money);
+			stockAssetsDao.merge(stockAssets);
+		}
 	}
 }

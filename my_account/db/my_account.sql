@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50530
 File Encoding         : 65001
 
-Date: 2015-04-27 17:31:30
+Date: 2015-04-28 15:03:45
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -105,6 +105,7 @@ INSERT INTO `buy` VALUES ('402890ba4ce51a72014ce5367722000c', '000002', '2015042
 INSERT INTO `buy` VALUES ('402890ba4ce51a72014ce538262e000d', '600435', '20150408', '200.000', '32.300', '6460.000', '5.168', '0.800', '0.120', '32.326', '6465.288', '0');
 INSERT INTO `buy` VALUES ('402890ba4cf9e74f014cf9edb4170001', '601727', '20150427', '200.000', '18.600', '3720.000', '5.000', '0.800', '0.120', '18.626', '3725.120', '0');
 INSERT INTO `buy` VALUES ('402890ba4cf9e74f014cf9ee441e0003', '002490', '20150427', '200.000', '13.280', '2656.000', '5.000', '0.800', '0.000', '13.305', '2661.000', '0');
+INSERT INTO `buy` VALUES ('402890ba4cfeca14014cfed2c4d60005', '601727', '20150428', '300.000', '18.210', '5463.000', '5.000', '0.800', '0.180', '18.227', '5468.180', '0');
 
 -- ----------------------------
 -- Table structure for `manage_finances`
@@ -120,6 +121,21 @@ CREATE TABLE `manage_finances` (
 
 -- ----------------------------
 -- Records of manage_finances
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `my_assets`
+-- ----------------------------
+DROP TABLE IF EXISTS `my_assets`;
+CREATE TABLE `my_assets` (
+  `id` varchar(100) NOT NULL,
+  `money` double(100,3) DEFAULT NULL,
+  `date` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of my_assets
 -- ----------------------------
 
 -- ----------------------------
@@ -177,6 +193,9 @@ INSERT INTO `resources` VALUES ('402890ba4cf8b7e3014cf8b934660001', '/bank/list'
 INSERT INTO `resources` VALUES ('402890ba4cf8f6bb014cf8fb47b90000', '/bankSave/list', null, null, '1', '银行储蓄', '', '-1', null, null, null, null, '0', '', '402890ba4cf8b7e3014cf8b8b1300000');
 INSERT INTO `resources` VALUES ('402890ba4cf98912014cf989c88a0000', '/manageFinances', '1', '3', '0', '理财', '', '-1', null, null, null, null, '0', '', '001');
 INSERT INTO `resources` VALUES ('402890ba4cf98912014cf98a89820001', '/manageFinances/list', null, null, '1', '理财管理', '', '-1', null, null, null, null, '0', '', '402890ba4cf98912014cf989c88a0000');
+INSERT INTO `resources` VALUES ('402890ba4cfdd543014cfdd637570000', '/stockOther/list', null, null, '1', '其他', '', '-1', null, null, null, null, '0', '', '4028e0814cbbfb1b014cbbff169d0000');
+INSERT INTO `resources` VALUES ('402890ba4cfeca14014cfecefcfb0000', '/myAssets', '1', '5', '0', '总资产', '', '-1', null, null, null, null, '0', '', '001');
+INSERT INTO `resources` VALUES ('402890ba4cfeca14014cfecf44820001', '/myAssets/list', null, null, '1', '总资产', '', '-1', null, null, null, null, '0', '', '402890ba4cfeca14014cfecefcfb0000');
 INSERT INTO `resources` VALUES ('4028e0814cbbfb1b014cbbff169d0000', '/socket', '1', '1', '0', '股票', '', '-1', null, null, null, null, '0', '', '001');
 INSERT INTO `resources` VALUES ('4028e0814cbbfb1b014cbc04c8870002', '/brokerage/list', null, null, '1', '佣金', '', '-1', null, null, null, null, '0', '', '4028e0814cbbfb1b014cbbff169d0000');
 INSERT INTO `resources` VALUES ('4028e0814cbbfb1b014cbc06839e0003', '/buy/list ', null, null, '1', '买入', '', '-1', null, null, null, null, '0', '', '4028e0814cbbfb1b014cbbff169d0000');
@@ -250,6 +269,7 @@ INSERT INTO `sell` VALUES ('402890ba4ce51a72014ce53cba6b0015', '600435', '201504
 INSERT INTO `sell` VALUES ('402890ba4ce51a72014ce53d0f6f0016', '000002', '20150422', '200.000', '14.820', '2964.000', '5.000', '0.800', '0.000', '2.964', '2956.036', '0');
 INSERT INTO `sell` VALUES ('402890ba4ce51a72014ce53d301b0017', '600048', '20150422', '200.000', '14.220', '2844.000', '5.000', '0.800', '0.120', '2.844', '2836.036', '0');
 INSERT INTO `sell` VALUES ('402890ba4cf9e74f014cf9ecb5f90000', '601766', '20150427', '100.000', '35.000', '3500.000', '5.000', '0.800', '0.060', '3.500', '3491.440', '0');
+INSERT INTO `sell` VALUES ('402890ba4cfeca14014cfed33ea20006', '601390', '20150428', '200.000', '22.580', '4516.000', '5.000', '0.800', '0.120', '4.516', '4510.880', '0');
 
 -- ----------------------------
 -- Table structure for `stock`
@@ -2365,6 +2385,24 @@ CREATE TABLE `stock_assets` (
 
 -- ----------------------------
 -- Records of stock_assets
+-- ----------------------------
+INSERT INTO `stock_assets` VALUES ('0.000', '0.000', '0.000', '0.000', '0.000', '20150428150325', '402890ba4cfeca14014cfed664d20007');
+
+-- ----------------------------
+-- Table structure for `stock_other`
+-- ----------------------------
+DROP TABLE IF EXISTS `stock_other`;
+CREATE TABLE `stock_other` (
+  `id` varchar(100) NOT NULL,
+  `name` varchar(100) DEFAULT NULL COMMENT '名称',
+  `money` double(100,3) DEFAULT NULL COMMENT '发生金额',
+  `date` varchar(100) DEFAULT NULL COMMENT '发生时间',
+  `record_flag` varchar(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of stock_other
 -- ----------------------------
 
 -- ----------------------------

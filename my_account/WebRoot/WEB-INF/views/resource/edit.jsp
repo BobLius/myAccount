@@ -9,6 +9,7 @@
 			+ request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML1.0 Transitional//EN">
 <html>
 	<head>
 	<script type="text/javascript">
@@ -53,7 +54,7 @@
 		<sf:form method="post" modelAttribute="resource" id="form1" cssStyle="height:100%">
 		     <jsp:include page="/common/from_repeate_submit.jsp"/>
 			<table border="1" class="Table_N" cellspacing="0" cellpadding="5"
-				align="center" width="100%">
+			align="center" width="100%">
 				<tr class="Table_H">
 					<td nowrap colspan="2" class="Table_H" height="30">
 						权限编辑：
